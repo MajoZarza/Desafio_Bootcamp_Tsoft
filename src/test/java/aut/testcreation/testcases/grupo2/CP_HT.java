@@ -18,6 +18,7 @@ public class CP_HT {
         homePage.conexionDriver(browser,rutaDriver,property);
         homePage.cargarPagina("https://www.rumbo.es/");
         homePage.maximizar();
+        homePage.cerrarCookies();
     }
 
     @Test

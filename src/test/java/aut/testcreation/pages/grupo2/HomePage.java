@@ -23,10 +23,11 @@ public class HomePage extends Rumbo_Base {
 
     //Dentro de Ver más para ir a Trenes:
     By locatorBtnTrenes = By.xpath("//a[@title='Trenes']") ;
-
-
-
     public HomePage(WebDriver driver) {
         super(driver);
     }
+
+    public void cerrarCookies (){ click(esperarPorElementoLocalizado(locatorBtnRechazarcookies)); }
+    public void verMas (){ click(esperarPorElementoLocalizado(locatorBtnVerMas)); }
+    public void trenes (){ click(esperarPorElementoLocalizado(locatorBtnTrenes)); }
 }
