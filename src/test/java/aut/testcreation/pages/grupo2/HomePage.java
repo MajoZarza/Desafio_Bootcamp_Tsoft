@@ -23,6 +23,14 @@ public class HomePage extends Rumbo_Base {
 
     //Dentro de Ver más para ir a Trenes:
     By locatorBtnTrenes = By.xpath("//a[@title='Trenes']") ;
+    By locatorBtnSoloIda = By.xpath("//div[@class='d-1nwmwhy']") ;
+    By locatorBtnOrigenVuelos = By.xpath("//input[@aria-label='Origen']") ;
+    By locatorBtnConfirmarOrigen = By.xpath("//input[@value='Madrid (MAD)']") ;
+    By locatorBtnDestinoVuelos = By.xpath("//input[@aria-label='Destino']") ;
+    By locatorBtnConfirmarDestino = By.xpath("//input[@value='Barcelona (BCN)']") ;
+    By locatorBtnFechaIda = By.xpath("//button[@aria-label='Fecha de ida']") ;
+    By locatorBtnDiaIda = By.xpath("//button[contains(text(), '25')]") ;
+    By locatorBtnBuscar = By.xpath("//button[@type='submit']") ;
     public HomePage(WebDriver driver) {
         super(driver);
     }
@@ -30,4 +38,24 @@ public class HomePage extends Rumbo_Base {
     public void cerrarCookies (){ click(esperarPorElementoLocalizado(locatorBtnRechazarcookies)); }
     public void verMas (){ click(esperarPorElementoLocalizado(locatorBtnVerMas)); }
     public void trenes (){ click(esperarPorElementoLocalizado(locatorBtnTrenes)); }
+    public void vuelos (){ click(esperarPorElementoLocalizado(locatorBtnVuelos)); }
+    public void hoteles (){ click(esperarPorElementoLocalizado(locatorBtnHoteles)); }
+    public void soloIda (){ click(esperarPorElementoLocalizado(locatorBtnSoloIda)); }
+    public void origenVuelo (){ click(esperarPorElementoLocalizado(locatorBtnOrigenVuelos)); }
+    public void destinoVuelo (){ click(esperarPorElementoLocalizado(locatorBtnDestinoVuelos)); }
+    public void fechaIda (){ click(esperarPorElementoLocalizado(locatorBtnFechaIda)); }
+
+    public void busquedaVueloSoloIda (String origen, String destino) {
+        click(esperarPorElementoLocalizado(locatorBtnVuelos));
+        click(esperarPorElementoLocalizado(locatorBtnSoloIda));
+        click(esperarPorElementoLocalizado(locatorBtnOrigenVuelos));
+        escribirTexto(esperarPorElementoLocalizado(locatorBtnOrigenVuelos), origen);
+        click(esperarPorElementoLocalizado(locatorBtnConfirmarOrigen));
+        click(esperarPorElementoLocalizado(locatorBtnDestinoVuelos));
+        escribirTexto(esperarPorElementoLocalizado(locatorBtnDestinoVuelos), destino);
+        click(esperarPorElementoLocalizado(locatorBtnConfirmarDestino));
+        click(esperarPorElementoLocalizado(locatorBtnFechaIda));
+        click(esperarPorElementoLocalizado(locatorBtnDiaIda));
+        click(esperarPorElementoLocalizado(locatorBtnBuscar));
+    }
 }
