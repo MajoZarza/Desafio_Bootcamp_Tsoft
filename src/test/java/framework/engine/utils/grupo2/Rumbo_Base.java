@@ -1,12 +1,10 @@
 package framework.engine.utils.grupo2;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.List;
@@ -40,6 +38,10 @@ public class Rumbo_Base {
 
     public void escribirTexto(WebElement elemento, String texto) {
         elemento.sendKeys(texto);
+    }
+
+    public void enter (WebElement elemento) {
+        elemento.sendKeys(Keys.ENTER);
     }
 
     public WebElement buscarElementoWeb(By localizador) {
@@ -104,5 +106,10 @@ public class Rumbo_Base {
         Set<String> windowHandles = driver.getWindowHandles();
         windowHandles.remove(currentWindowHandle);
         driver.switchTo().window(windowHandles.iterator().next());
+    }
+
+    public void seleccionarComboboxPorValue (By localizador, String value) {
+        Select selectorOrigen = new Select(esperarPorElementoLocalizado(localizador));
+        selectorOrigen.selectByValue(value);
     }
 }
