@@ -55,20 +55,24 @@ public class HomePage extends Rumbo_Base {
     public void destinoVuelo (){ click(esperarPorElementoLocalizado(locatorBtnDestinoVuelos)); }
     public void fechaIda (){ click(esperarPorElementoLocalizado(locatorBtnFechaIda)); }
 
-    public void busquedaVueloSoloIda (String origen, String destino) throws InterruptedException {
+    public void busquedaVueloSoloIda (String origen, String destino) {
         click(esperarPorElementoLocalizado(locatorBtnVuelos));
         click(esperarPorElementoLocalizado(locatorBtnSoloIda));
         click(esperarPorElementoLocalizado(locatorBtnOrigenVuelos));
         escribirTexto(esperarPorElementoLocalizado(locatorBtnOrigenVuelos), origen);
-        enter(esperarPorElementoLocalizado(locatorBtnOrigenVuelos));
+        esperarXSegundos(1000);
+        //enter(esperarPorElementoLocalizado(locatorBtnOrigenVuelos));
         click(esperarPorElementoLocalizado(locatorMadrid));
         click(esperarPorElementoLocalizado(locatorBtnDestinoVuelos));
         escribirTexto(esperarPorElementoLocalizado(locatorBtnDestinoVuelos), destino);
-        Thread.sleep(2000);
-        enter(esperarPorElementoLocalizado(locatorBtnDestinoVuelos));
+        esperarXSegundos(1000);
+        //enter(esperarPorElementoLocalizado(locatorBtnDestinoVuelos));
         click(esperarPorElementoLocalizado(locatorBarcelona));
         click(esperarPorElementoLocalizado(locatorBtnFechaIda));
         click(esperarPorElementoLocalizado(locatorBtnDiaIda));
+        click(esperarPorElementoLocalizado(locatorBtnOrigenVuelos));
+        click(esperarPorElementoLocalizado(locatorBtnDestinoVuelos));
+        esperarXSegundos(1000);
         click(esperarPorElementoLocalizado(locatorBtnBuscar));
     }
 
@@ -77,7 +81,7 @@ public class HomePage extends Rumbo_Base {
         click(esperarPorElementoLocalizado(locatorBtnTrenes));
     }
 
-    public void busquedaVueloSoloIdaOtroDestino (String origen, String destino) throws InterruptedException {
+    public void busquedaVueloSoloIdaOtroDestino (String origen, String destino)  {
         click(esperarPorElementoLocalizado(locatorBtnVuelos));
         click(esperarPorElementoLocalizado(locatorBtnSoloIda));
         click(esperarPorElementoLocalizado(locatorBtnOrigenVuelos));

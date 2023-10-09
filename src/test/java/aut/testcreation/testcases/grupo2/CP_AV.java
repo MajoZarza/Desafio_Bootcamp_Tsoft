@@ -13,7 +13,7 @@ public class CP_AV {
     HomePage homePage;
     Vuelos vuelos;
     String rutaDriver = "C:\\Users\\guido.paparua\\Desktop\\BootCamp\\GIT\\Repo de todos - practica\\app\\src\\test\\resources\\drivers\\chromedriver.exe";
-
+            //"C:\\Users\\romina.antagli\\Desktop\\romina_antagli_sprint1\\src\\test\\resources\\chromedriver.exe";
 
     String browser = "Chrome";
     String property = "webdriver.chrome.driver";
@@ -39,7 +39,7 @@ public class CP_AV {
 
     @Test
     //Error por no encontrar resultados - Reserva de Vuelo solo IDA
-    public void CP_AV_02() throws InterruptedException {
+    public void CP_AV_02()  {
     homePage.busquedaVueloSoloIdaOtroDestino("Villa Gesell (VLG)", "Seúl (SEL)");
     homePage.esperarXSegundos(100000);
     Assertions.assertTrue(true);
@@ -47,9 +47,9 @@ public class CP_AV {
     }
 
     @Test
-    public void CP_AV_03() throws InterruptedException {
-        homePage.busquedaVueloSoloIda("Madrid (MAD)", "Barcelona");
-        Thread.sleep(10000);
+    public void CP_AV_03() {
+        homePage.busquedaVueloSoloIda("Madrid (MAD)", "Barcelona (BCN)");
+        homePage.esperarXSegundos(10000);
         vuelos.seleccionarPrimerVuelo();
         vuelos.tarifaClassic();
         vuelos.completarFormularioContacto("Dario", "Daro", "darioa@gmail.com", "198889997");
