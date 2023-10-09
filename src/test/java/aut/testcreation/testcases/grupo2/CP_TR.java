@@ -22,23 +22,28 @@ public class CP_TR {
     }
 
     @Test
+    //Error al querer reservar más de 31 noches - Busqueda Tren - Ida y Vuelta
     public void CP_TR_01(){
 
     }
 
     @Test
+    //Reserva Tren - Ida y vuelta
     public void CP_TR_02(){
 
     }
     @Test
+    //Error por querer ingresar email inválido  - Reserva Tren
     public void CP_TR_03(){
 
     }
     @Test
+    //Reserva Tren - Solo ida - eligiendo opción el más rápido
     public void CP_TR_04(){
 
     }
     @Test
+    //Error por no ingresar el DNI en la registración - Reserva Tren - Solo ida
     public void CP_TR_05(){
 
     }

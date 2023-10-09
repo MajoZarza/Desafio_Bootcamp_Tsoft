@@ -15,49 +15,66 @@ public class CP_AV {
     String rutaDriver = "C:\\Users\\guido.paparua\\Desktop\\BootCamp\\GIT\\Repo de todos - practica\\app\\src\\test\\resources\\drivers\\chromedriver.exe";
     String browser = "Chrome";
     String property = "webdriver.chrome.driver";
+
     @BeforeEach
-    public void preTests(){
+    public void preTests() {
         homePage = new HomePage(driver);
-        homePage.conexionDriver(browser,rutaDriver,property);
-        vuelos = new Vuelos (homePage.getDriver());
+        homePage.conexionDriver(browser, rutaDriver, property);
+        vuelos = new Vuelos(homePage.getDriver());
         homePage.cargarPagina("https://www.rumbo.es/");
         homePage.maximizar();
         homePage.cerrarCookies();
     }
 
     @Test
-    public void CP_AV_01(){
+    //Reserva de Vuelo - Multidestino
+    public void CP_AV_01() {
+        //homePage.vuelos();
+        //vuelos.multidestino();
 
     }
+
 
     @Test
-    public void CP_AV_02(){
+    //Error por no encontrar resultados - Reserva de Vuelo solo IDA
+    public void CP_AV_02() {
+
 
     }
+
     @Test
     public void CP_AV_03() throws InterruptedException {
         homePage.busquedaVueloSoloIda("Madrid (MAD)", "Barcelona");
         Thread.sleep(10000);
         vuelos.seleccionarPrimerVuelo();
         vuelos.tarifaClassic();
-        vuelos.completarFormularioContacto("Dario", "Daro", "darioa@gmail.com", "915221121");
+        vuelos.completarFormularioContacto("Dario", "Daro", "darioa@gmail.com", "198889997");
         vuelos.completarFormularioDireccion("Gran via", "10", "28006", "Madrid");
         vuelos.completarFormularioPasajero("15", "Enero", "1991");
         vuelos.equipajeFacturado();
     }
+
     @Test
-    public void CP_AV_04(){
+    //Reserva de Vuelo - Solo Ida - Elección Full Flex
+    public void CP_AV_04() {
 
     }
+
     @Test
-    public void CP_AV_05(){
+    //Busqueda Vuelo - Solo ida - con opción Tarjeta Maestro
+    public void CP_AV_05() {
 
     }
+
     @Test
-    public void CP_AV_06(){
+    //Busqueda Vuelo - Ida y vuelta - con opción Primera Clase
+    public void CP_AV_06() {
 
     }
 
     @AfterEach
-    public void afterTests (){ homePage.cerrarBrowser(); }
+    public void afterTests() {
+        homePage.cerrarBrowser();
+    }
 }
+

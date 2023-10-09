@@ -24,19 +24,27 @@ public class Vuelos extends Rumbo_Base {
     By locatorEnero = By.xpath("//span[contains(text(), 'enero')]");
     By locatorAnioNacimientoPasajero = By.xpath("//input[@data-testid='[0-9]{1,4}']");
 
-    public Vuelos(WebDriver driver) { super(driver); }
+    By locatorMultidestino = By.xpath("//a[contains(text(),\"Multidestino\")]");
 
-    public void seleccionarPrimerVuelo () {
+    public Vuelos(WebDriver driver) {
+        super(driver);
+    }
+
+    public void seleccionarPrimerVuelo() {
         click(esperarPorElementoLocalizado(locatorPrimerVuelo));
         click(esperarPorElementoLocalizado(locatorSeleccionar));
     }
 
-    public void tarifaClassic () {
+    public void tarifaClassic() {
         scrollByLocator(locatorTarifaClassic);
         click(esperarPorElementoLocalizado(locatorTarifaClassic));
     }
 
-    public void completarFormularioContacto (String nombre, String apellido, String correo, String telefono) {
+    public void multidestino() {
+        click(esperarPorElementoLocalizado(locatorMultidestino));
+    }
+
+    public void completarFormularioContacto(String nombre, String apellido, String correo, String telefono) {
         click(esperarPorElementoLocalizado(locatorNombreContacto));
         escribirTexto(esperarPorElementoLocalizado(locatorNombreContacto), nombre);
         click(esperarPorElementoLocalizado(locatorApellidoContacto));
@@ -50,7 +58,7 @@ public class Vuelos extends Rumbo_Base {
         enter(esperarPorElementoLocalizado(locatorTelefono));
     }
 
-    public void completarFormularioDireccion (String calle, String altura, String CP, String ciudad) {
+    public void completarFormularioDireccion(String calle, String altura, String CP, String ciudad) {
         scrollByLocator(locatorCalle);
         click(esperarPorElementoLocalizado(locatorCalle));
         escribirTexto(esperarPorElementoLocalizado(locatorCalle), calle);
@@ -62,7 +70,8 @@ public class Vuelos extends Rumbo_Base {
         click(esperarPorElementoLocalizado(locatorCiudad));
         escribirTexto(esperarPorElementoLocalizado(locatorCiudad), ciudad);
     }
-    public void completarFormularioPasajero (String dia, String mes, String anio) {
+
+    public void completarFormularioPasajero(String dia, String mes, String anio) {
         scrollByLocator(locatorChecks);
         click(esperarPorElementoLocalizado(locatorGeneroMasculino));
         escribirTexto(esperarPorElementoLocalizado(locatorDiaNacimientoPasajero), dia);
