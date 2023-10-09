@@ -22,27 +22,33 @@ public class CP_HT {
     }
 
     @Test
+    //Reserva de Hotel - Añadir habitación
     public void CP_HT_01(){
 
     }
 
     @Test
+    //Reserva de Hotel - Filtrar precios
     public void CP_HT_02(){
 
     }
     @Test
+    //Reserva de Habitación - con modificación de fecha - "Resumen de viaje"
     public void CP_HT_03(){
 
     }
     @Test
+    //Error por fecha límite en el calendario - Reserva de hotel
     public void CP_HT_04(){
 
     }
     @Test
+    //Error falta de ingreso de un campo obligatorio - Reserva para otra persona habitación de hotel
     public void CP_HT_05(){
 
     }
     @Test
+    //Reserva de habitación - Con WIFI y Parking
     public void CP_HT_06(){
 
     }

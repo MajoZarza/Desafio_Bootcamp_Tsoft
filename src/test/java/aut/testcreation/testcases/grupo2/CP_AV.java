@@ -25,15 +25,19 @@ public class CP_AV {
     }
 
     @Test
+    //Reserva de Vuelo - Multidestino
     public void CP_AV_01(){
 
     }
 
+
     @Test
+   //Error por no encontrar resultados - Reserva de Vuelo solo IDA
     public void CP_AV_02(){
 
     }
     @Test
+    //Error falta de ingreso de un campo obligatorio - Reserva vuelo - SOLO IDA
     public void CP_AV_03(){
         homePage.busquedaVueloSoloIda("Madrid (MAD)", "Barcelona (BCN)"); //si no aplico tab no me los toma
         // aca sin un sleep se me rompe
@@ -44,14 +48,17 @@ public class CP_AV {
         //vuelos.completarFormularioPasajero("Dario", "Daro", "15", "Enero", "1991");
     }
     @Test
+    //Reserva de Vuelo - Solo Ida - Elección Full Flex
     public void CP_AV_04(){
 
     }
     @Test
+    //Busqueda Vuelo - Solo ida - con opción Tarjeta Maestro
     public void CP_AV_05(){
 
     }
     @Test
+    //Busqueda Vuelo - Ida y vuelta - con opción Primera Clase
     public void CP_AV_06(){
 
     }
