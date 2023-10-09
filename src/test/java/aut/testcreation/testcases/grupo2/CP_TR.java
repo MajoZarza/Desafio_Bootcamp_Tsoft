@@ -1,6 +1,7 @@
 package aut.testcreation.testcases.grupo2;
 
 import aut.testcreation.pages.grupo2.HomePage;
+import aut.testcreation.pages.grupo2.Trenes;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -9,22 +10,24 @@ import org.openqa.selenium.WebDriver;
 public class CP_TR {
     WebDriver driver;
     HomePage homePage;
+    Trenes trenes;
     String rutaDriver = "C:\\Users\\guido.paparua\\Desktop\\BootCamp\\GIT\\Repo de todos - practica\\app\\src\\test\\resources\\drivers\\chromedriver.exe";
     String browser = "Chrome";
     String property = "webdriver.chrome.driver";
     @BeforeEach
     public void preTests(){
         homePage = new HomePage(driver);
+        trenes = new Trenes(driver);
         homePage.conexionDriver(browser,rutaDriver,property);
-        homePage.cargarPagina("https://www.rumbo.es/");
+        homePage.cargarPagina("https://www.rumbo.es/trenes/");
         homePage.maximizar();
         homePage.cerrarCookies();
     }
 
     @Test
     //Error al querer reservar más de 31 noches - Busqueda Tren - Ida y Vuelta
-    public void CP_TR_01(){
-
+    public void CP_TR_01() throws InterruptedException {
+        trenes.reservaLargaError("Madrid", "Barcelona");
     }
 
     @Test

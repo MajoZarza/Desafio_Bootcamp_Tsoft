@@ -19,7 +19,7 @@ public class HomePage extends Rumbo_Base {
     By locatorBtnHoteles = By.xpath("//a[@title='Hoteles']");
 
     //Para ir al icono de Ver más:
-    By locatorBtnVerMas = By.xpath("//a[@title='Ver más']");
+    By locatorBtnVerMas = By.xpath("//div[contains(text(), 'Ver más')]");
 
     //Dentro de Ver más para ir a Trenes:
     By locatorBtnTrenes = By.xpath("//a[@title='Trenes']") ;
@@ -45,7 +45,7 @@ public class HomePage extends Rumbo_Base {
     public void destinoVuelo (){ click(esperarPorElementoLocalizado(locatorBtnDestinoVuelos)); }
     public void fechaIda (){ click(esperarPorElementoLocalizado(locatorBtnFechaIda)); }
 
-    public void busquedaVueloSoloIda (String origen, String destino) {
+    public void busquedaVueloSoloIda (String origen, String destino) throws InterruptedException {
         click(esperarPorElementoLocalizado(locatorBtnVuelos));
         click(esperarPorElementoLocalizado(locatorBtnSoloIda));
         click(esperarPorElementoLocalizado(locatorBtnOrigenVuelos));
@@ -54,10 +54,16 @@ public class HomePage extends Rumbo_Base {
         click(esperarPorElementoLocalizado(locatorMadrid));
         click(esperarPorElementoLocalizado(locatorBtnDestinoVuelos));
         escribirTexto(esperarPorElementoLocalizado(locatorBtnDestinoVuelos), destino);
+        Thread.sleep(2000);
         enter(esperarPorElementoLocalizado(locatorBtnDestinoVuelos));
         click(esperarPorElementoLocalizado(locatorBarcelona));
         click(esperarPorElementoLocalizado(locatorBtnFechaIda));
         click(esperarPorElementoLocalizado(locatorBtnDiaIda));
         click(esperarPorElementoLocalizado(locatorBtnBuscar));
+    }
+
+    public void irATrenes () {
+        click(esperarPorElementoLocalizado(locatorBtnVerMas));
+        click(esperarPorElementoLocalizado(locatorBtnTrenes));
     }
 }
