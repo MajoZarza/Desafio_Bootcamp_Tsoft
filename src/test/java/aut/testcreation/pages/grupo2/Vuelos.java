@@ -28,6 +28,7 @@ public class Vuelos extends Rumbo_Base {
     By locatorEnero = By.xpath("//span[contains(text(), 'enero')]");
     By locatorAnioNacimientoPasajero = By.xpath("//input[@data-testid='[0-9]{1,4}']");
 
+    By locatorMultidestino = By.xpath("//a[contains(text(),\"Multidestino\")]");
     public Vuelos(WebDriver driver) { super(driver); }
 
     public void seleccionarPrimerVuelo () {
@@ -39,6 +40,7 @@ public class Vuelos extends Rumbo_Base {
         click(esperarPorElementoLocalizado(locatorTarifaClassic));
     }
 
+    public void multidestino () {click(esperarPorElementoLocalizado(locatorMultidestino));}
     public void completarFormularioContacto (String nombre, String apellido, String correo, String prefijo, String telefono) {
         click(esperarPorElementoLocalizado(locatorNombreContacto));
         escribirTexto(esperarPorElementoLocalizado(locatorNombreContacto), nombre);

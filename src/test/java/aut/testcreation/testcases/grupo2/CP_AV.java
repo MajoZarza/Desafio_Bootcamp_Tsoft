@@ -27,6 +27,8 @@ public class CP_AV {
     @Test
     //Reserva de Vuelo - Multidestino
     public void CP_AV_01(){
+    //homePage.vuelos();
+    //vuelos.multidestino();
 
     }
 
@@ -34,6 +36,7 @@ public class CP_AV {
     @Test
    //Error por no encontrar resultados - Reserva de Vuelo solo IDA
     public void CP_AV_02(){
+
 
     }
     @Test
