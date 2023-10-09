@@ -18,6 +18,7 @@ public class HomePage extends Rumbo_Base {
     //Para ir al icono Hoteles:
     By locatorBtnHoteles = By.xpath("//a[@title='Hoteles']");
 
+
     //Para ir al icono de Ver más:
     By locatorBtnVerMas = By.xpath("//a[@title='Ver más']");
 
@@ -40,6 +41,7 @@ public class HomePage extends Rumbo_Base {
     public void trenes (){ click(esperarPorElementoLocalizado(locatorBtnTrenes)); }
     public void vuelos (){ click(esperarPorElementoLocalizado(locatorBtnVuelos)); }
     public void hoteles (){ click(esperarPorElementoLocalizado(locatorBtnHoteles)); }
+
     public void soloIda (){ click(esperarPorElementoLocalizado(locatorBtnSoloIda)); }
     public void origenVuelo (){ click(esperarPorElementoLocalizado(locatorBtnOrigenVuelos)); }
     public void destinoVuelo (){ click(esperarPorElementoLocalizado(locatorBtnDestinoVuelos)); }
