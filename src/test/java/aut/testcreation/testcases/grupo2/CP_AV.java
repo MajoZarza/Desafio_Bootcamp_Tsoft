@@ -53,15 +53,20 @@ public class CP_AV {
         vuelos.seleccionarPrimerVuelo();
         vuelos.tarifaClassic();
         vuelos.completarFormularioContacto("Dario", "Daro", "darioa@gmail.com", "198889997");
-        vuelos.completarFormularioDireccion("Gran via", "10", "28006", "Madrid");
-        vuelos.completarFormularioPasajero("15", "Enero", "1991");
-        vuelos.equipajeFacturado();
+        vuelos.siguiente();
     }
 
     @Test
     //Reserva de Vuelo - Solo Ida - Elección Full Flex
     public void CP_AV_04() {
-
+        homePage.busquedaVueloSoloIda("Madrid (MAD)", "Barcelona (BCN)");
+        homePage.esperarXSegundos(10000);
+        vuelos.seleccionarPrimerVuelo();
+        vuelos.tarifaFlex();
+        vuelos.completarFormularioContacto("Dario", "Daro", "darioa@gmail.com", "198889997");
+        vuelos.completarFormularioDireccion("Gran via", "10", "28006", "Madrid");
+        vuelos.completarFormularioPasajero("15", "Enero", "1991");
+        vuelos.equipajeFacturado();
     }
 
     @Test

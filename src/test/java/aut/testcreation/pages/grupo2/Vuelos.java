@@ -9,6 +9,7 @@ public class Vuelos extends Rumbo_Base {
     By locatorPrimerVuelo = By.xpath("//div[@class='trip-collection-view__trips-container-top']");
     By locatorSeleccionar = By.xpath("//button[contains(text(), 'Seleccionar')]");
     By locatorTarifaClassic = By.xpath("//button[contains(text(), 'Elegir Classic')]");
+    By locatorTarifaFlex = By.xpath("//button[contains(text(), 'Elegir Flexible')]");
     By locatorNombreContacto = By.xpath("//input[@name='name']");
     By locatorApellidoContacto = By.xpath("//input[@name='surname']");
     By locatorCorreoContacto = By.xpath("//input[@name='email']");
@@ -23,6 +24,7 @@ public class Vuelos extends Rumbo_Base {
     By locatorMesNacimientoPasajero = By.xpath("//data-testid='groups.1.travellers.1.dateOfBirth_month'");
     By locatorEnero = By.xpath("//span[contains(text(), 'enero')]");
     By locatorAnioNacimientoPasajero = By.xpath("//input[@data-testid='[0-9]{1,4}']");
+    By locatorSiguiente = By.xpath("//button[@data-test='lead-generation-submit-btn']");
 
     By locatorMultidestino = By.xpath("//a[contains(text(),\"Multidestino\")]");
 
@@ -39,6 +41,10 @@ public class Vuelos extends Rumbo_Base {
     public void tarifaClassic() {
         scrollByLocator(locatorTarifaClassic);
         click(esperarPorElementoLocalizado(locatorTarifaClassic));
+    }
+    public void tarifaFlex() {
+        scrollByLocator(locatorTarifaFlex);
+        click(esperarPorElementoLocalizado(locatorTarifaFlex));
     }
 
     public void multidestino() {
@@ -88,6 +94,8 @@ public class Vuelos extends Rumbo_Base {
     }
 
 
-
-
+    public void siguiente() {
+        scrollByLocator(locatorSiguiente);
+        click(esperarPorElementoLocalizado(locatorSiguiente));
+    }
 }
