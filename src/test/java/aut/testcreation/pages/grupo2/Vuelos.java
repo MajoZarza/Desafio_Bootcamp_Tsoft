@@ -26,6 +26,7 @@ public class Vuelos extends Rumbo_Base {
 
     By locatorMultidestino = By.xpath("//a[contains(text(),\"Multidestino\")]");
 
+
     public Vuelos(WebDriver driver) {
         super(driver);
     }
@@ -85,4 +86,8 @@ public class Vuelos extends Rumbo_Base {
     public void equipajeFacturado() {
         scrollByLocator(locatorChecks);
     }
+
+
+
+
 }

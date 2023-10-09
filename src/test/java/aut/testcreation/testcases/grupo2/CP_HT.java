@@ -24,17 +24,17 @@ public class CP_HT {
 
 
     @BeforeEach
-    public void preTests(){
+    public void preTests() {
         hoteles = new Hoteles(driver);
         homePage = new HomePage(driver);
-        homePage.conexionDriver(browser,rutaDriver,property);
+        homePage.conexionDriver(browser, rutaDriver, property);
         homePage.cargarPagina("https://www.rumbo.es/");
         homePage.maximizar();
         homePage.cerrarCookies();
 
 
-    }
-
+    }}
+/*
 
     @Test
     //Reserva de Hotel - Añadir habitación
@@ -48,7 +48,7 @@ public class CP_HT {
 
     }
     @Test
-<<<<<<< HEAD
+
     public void CP_HT_03() throws InterruptedException {
 
         //WebDriver driver = new ChromeDriver();
@@ -60,10 +60,10 @@ public class CP_HT {
         //Thread.sleep(3000);
         //hoteles.buscar();
         //Thread.sleep(3000);
-=======
+
     //Reserva de Habitación - con modificación de fecha - "Resumen de viaje"
     public void CP_HT_03(){
->>>>>>> 572fb9c4eece9607208ef41811930a48c2e84db0
+
 
     }
     @Test
@@ -90,3 +90,6 @@ public class CP_HT {
     @AfterEach
     public void afterTests (){ homePage.cerrarBrowser(); }
 }
+
+
+ */

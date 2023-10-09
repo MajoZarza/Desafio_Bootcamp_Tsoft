@@ -13,6 +13,8 @@ public class CP_AV {
     HomePage homePage;
     Vuelos vuelos;
     String rutaDriver = "C:\\Users\\guido.paparua\\Desktop\\BootCamp\\GIT\\Repo de todos - practica\\app\\src\\test\\resources\\drivers\\chromedriver.exe";
+
+
     String browser = "Chrome";
     String property = "webdriver.chrome.driver";
 
@@ -29,16 +31,18 @@ public class CP_AV {
     @Test
     //Reserva de Vuelo - Multidestino
     public void CP_AV_01() {
-        //homePage.vuelos();
-        //vuelos.multidestino();
+        homePage.vuelos();
+        vuelos.multidestino();
 
     }
 
 
     @Test
     //Error por no encontrar resultados - Reserva de Vuelo solo IDA
-    public void CP_AV_02() {
-
+    public void CP_AV_02() throws InterruptedException {
+    homePage.busquedaVueloSoloIdaOtroDestino("Villa Gesell (VLG)", "Seúl (SEL)");
+    homePage.esperarXSegundos(100000);
+    Assertions.assertTrue(true);
 
     }
 

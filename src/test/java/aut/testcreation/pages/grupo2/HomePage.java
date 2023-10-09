@@ -32,6 +32,14 @@ public class HomePage extends Rumbo_Base {
     By locatorBtnFechaIda = By.xpath("//button[@aria-label='Fecha de ida']") ;
     By locatorBtnDiaIda = By.xpath("//button[contains(text(), '25')]") ;
     By locatorBtnBuscar = By.xpath("//button[@type='submit']") ;
+
+   //agregue esto
+   By locatorSeul = By.xpath("//input[@value='Seúl (SEL)']") ;
+
+   By locatorGesel = By.xpath("//input[@value='Villa Gesell (VLG)']") ;
+
+
+
     public HomePage(WebDriver driver) {
         super(driver);
     }
@@ -67,5 +75,25 @@ public class HomePage extends Rumbo_Base {
     public void irATrenes () {
         click(esperarPorElementoLocalizado(locatorBtnVerMas));
         click(esperarPorElementoLocalizado(locatorBtnTrenes));
+    }
+
+    public void busquedaVueloSoloIdaOtroDestino (String origen, String destino) throws InterruptedException {
+        click(esperarPorElementoLocalizado(locatorBtnVuelos));
+        click(esperarPorElementoLocalizado(locatorBtnSoloIda));
+        click(esperarPorElementoLocalizado(locatorBtnOrigenVuelos));
+        escribirTexto(esperarPorElementoLocalizado(locatorBtnOrigenVuelos), origen);
+        esperarXSegundos(1000);
+        //enter(esperarPorElementoLocalizado(locatorBtnOrigenVuelos));
+        click(esperarPorElementoLocalizado(locatorGesel));
+        click(esperarPorElementoLocalizado(locatorBtnDestinoVuelos));
+        escribirTexto(esperarPorElementoLocalizado(locatorBtnDestinoVuelos), destino);
+        esperarXSegundos(10000);
+        //enter(esperarPorElementoLocalizado(locatorBtnDestinoVuelos));
+        click(esperarPorElementoLocalizado(locatorSeul));
+        click(esperarPorElementoLocalizado(locatorBtnFechaIda));
+        click(esperarPorElementoLocalizado(locatorBtnDiaIda));
+        click(esperarPorElementoLocalizado(locatorBtnOrigenVuelos));
+        click(esperarPorElementoLocalizado(locatorBtnDestinoVuelos));
+        click(esperarPorElementoLocalizado(locatorBtnBuscar));
     }
 }
