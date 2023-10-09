@@ -37,34 +37,43 @@ public class CP_HT {
 
 
     @Test
+    //Reserva de Hotel - Añadir habitación
     public void CP_HT_01(){
 
     }
 
     @Test
+    //Reserva de Hotel - Filtrar precios
     public void CP_HT_02(){
 
     }
     @Test
+<<<<<<< HEAD
     public void CP_HT_03() throws InterruptedException {
 
         //WebDriver driver = new ChromeDriver();
         //Hoteles hoteles = new Hoteles(driver);
-        Thread.sleep(3000);
-        homePage.hoteles();
-        Thread.sleep(5000);
-        hoteles.completarDestino();
-        Thread.sleep(3000);
+      //  Thread.sleep(3000);
+        //homePage.hoteles();
+        //Thread.sleep(5000);
+        //hoteles.completarDestino();
+        //Thread.sleep(3000);
         //hoteles.buscar();
-        Thread.sleep(3000);
+        //Thread.sleep(3000);
+=======
+    //Reserva de Habitación - con modificación de fecha - "Resumen de viaje"
+    public void CP_HT_03(){
+>>>>>>> 572fb9c4eece9607208ef41811930a48c2e84db0
 
     }
     @Test
+    //Error por fecha límite en el calendario - Reserva de hotel
     public void CP_HT_04(){
         homePage.hoteles();
 
     }
     @Test
+    //Error falta de ingreso de un campo obligatorio - Reserva para otra persona habitación de hotel
     public void CP_HT_05(){
 
         homePage.hoteles();
@@ -72,6 +81,7 @@ public class CP_HT {
 
     }
     @Test
+    //Reserva de habitación - Con WIFI y Parking
     public void CP_HT_06(){
         homePage.hoteles();
 
