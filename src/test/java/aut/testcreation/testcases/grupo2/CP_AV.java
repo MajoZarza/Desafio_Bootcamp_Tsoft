@@ -19,6 +19,7 @@ public class CP_AV {
     public void preTests(){
         homePage = new HomePage(driver);
         homePage.conexionDriver(browser,rutaDriver,property);
+        vuelos = new Vuelos (homePage.getDriver());
         homePage.cargarPagina("https://www.rumbo.es/");
         homePage.maximizar();
         homePage.cerrarCookies();
@@ -34,14 +35,15 @@ public class CP_AV {
 
     }
     @Test
-    public void CP_AV_03(){
-        homePage.busquedaVueloSoloIda("Madrid (MAD)", "Barcelona (BCN)"); //si no aplico tab no me los toma
-        // aca sin un sleep se me rompe
-        //vuelos.seleccionarPrimerVuelo(); // no estoy pudiendo seleccionarlo
-        //vuelos.tarifaClassic();
-        //vuelos.completarFormularioContacto("Dario", "Daro", "darioa@gmail.com", "Argentina", "11115555");
-        //vuelos.completarFormularioDireccion("Gran via", "10", "28006", "Madrid");
-        //vuelos.completarFormularioPasajero("Dario", "Daro", "15", "Enero", "1991");
+    public void CP_AV_03() throws InterruptedException {
+        homePage.busquedaVueloSoloIda("Madrid (MAD)", "Barcelona");
+        Thread.sleep(10000);
+        vuelos.seleccionarPrimerVuelo();
+        vuelos.tarifaClassic();
+        vuelos.completarFormularioContacto("Dario", "Daro", "darioa@gmail.com", "915221121");
+        vuelos.completarFormularioDireccion("Gran via", "10", "28006", "Madrid");
+        vuelos.completarFormularioPasajero("15", "Enero", "1991");
+        vuelos.equipajeFacturado();
     }
     @Test
     public void CP_AV_04(){
