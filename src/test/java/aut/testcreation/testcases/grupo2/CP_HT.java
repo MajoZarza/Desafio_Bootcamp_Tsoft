@@ -52,15 +52,15 @@ public class CP_HT extends SeleniumTestBase {
 
     //@Test
     //public void CP_HT_03() throws InterruptedException {
-        //WebDriver driver = new ChromeDriver();
-        //Hoteles hoteles = new Hoteles(driver);
-        //  Thread.sleep(3000);
-        //homePage.hoteles();
-        //Thread.sleep(5000);
-        //hoteles.completarDestino();
-        //Thread.sleep(3000);
-        //hoteles.buscar();
-        //Thread.sleep(3000);}
+    //WebDriver driver = new ChromeDriver();
+    //Hoteles hoteles = new Hoteles(driver);
+    //  Thread.sleep(3000);
+    //homePage.hoteles();
+    //Thread.sleep(5000);
+    //hoteles.completarDestino();
+    //Thread.sleep(3000);
+    //hoteles.buscar();
+    //Thread.sleep(3000);}
     //Reserva de Habitación - con modificación de fecha - "Resumen de viaje"
 
 
