@@ -1,11 +1,6 @@
 
 package aut.testcreation.testcases;
 
-<<<<<<< HEAD
-/*package aut.testcreation.testcases;
->>>>>>> refs/remotes/origin/main
-=======
->>>>>>> e1772b496f83d553c7f8407c3a5d8a628f73b2c4
 
 import framework.engine.selenium.DriverFactory;
 import framework.engine.selenium.SeleniumTestBase;
@@ -36,12 +31,5 @@ public class TestDemo extends SeleniumTestBase {
         Thread.sleep(5000);
         Assertions.assertTrue(true);
     }
-<<<<<<< HEAD
 
 }
-
-}*/
-
-=======
-}
->>>>>>> e1772b496f83d553c7f8407c3a5d8a628f73b2c4

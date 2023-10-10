@@ -1,10 +1,7 @@
-<<<<<<< HEAD
-/*package aut.testcreation.testcases.grupo2;
-
-=======
 package aut.testcreation.testcases.grupo2;
+
+
 import framework.engine.selenium.DriverFactory;
->>>>>>> e1772b496f83d553c7f8407c3a5d8a628f73b2c4
 import aut.testcreation.pages.grupo2.HomePage;
 import aut.testcreation.pages.grupo2.Vuelos;
 import framework.engine.selenium.SeleniumTestBase;
@@ -45,7 +42,7 @@ public class CP_AV extends SeleniumTestBase {
     }
 
     @Test
-    public void CP_AV_03() throws InterruptedException {
+    public void CP_AV_03()  {
         homePage.busquedaVueloSoloIda("Madrid (MAD)", "Barcelona (BCN)");
         homePage.esperarXSegundos(10000);
         vuelos.seleccionarPrimerVuelo();
@@ -83,5 +80,5 @@ public class CP_AV extends SeleniumTestBase {
     public void afterTests() {
         homePage.cerrarBrowser();
     }
-}*/
+}
 

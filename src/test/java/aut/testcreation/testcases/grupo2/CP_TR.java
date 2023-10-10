@@ -1,4 +1,4 @@
-/* package aut.testcreation.testcases.grupo2;
+package aut.testcreation.testcases.grupo2;
 
 import aut.testcreation.pages.grupo2.HomePage;
 import aut.testcreation.pages.grupo2.Trenes;
@@ -10,31 +10,15 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.WebDriver;
 
-<<<<<<< HEAD
-
-
-public class CP_TR {
-=======
 import javax.xml.datatype.DatatypeFactory;
 
 
 public class CP_TR extends SeleniumTestBase {
->>>>>>> e1772b496f83d553c7f8407c3a5d8a628f73b2c4
 
     WebDriver driver;
     HomePage homePage;
     Trenes trenes;
-<<<<<<< HEAD
-    String rutaDriver = "C:\\Users\\guido.paparua\\Desktop\\BootCamp\\GIT\\Repo de todos - practica\\app\\src\\test\\resources\\drivers\\chromedriver.exe";
-    String browser = "Chrome";
-    String property = "webdriver.chrome.driver";
 
-
-
-
-=======
-
->>>>>>> e1772b496f83d553c7f8407c3a5d8a628f73b2c4
     @BeforeEach
     public void preTests() {
         driver= DriverFactory.getDriver();
@@ -81,17 +65,12 @@ public class CP_TR extends SeleniumTestBase {
     }
 
     @AfterEach
-<<<<<<< HEAD
+
     public void afterTests (){ homePage.cerrarBrowser(); }
 
 
-}*/
-
-
-
-=======
-    public void afterTests() {
-        homePage.cerrarBrowser();
-    }
 }
->>>>>>> e1772b496f83d553c7f8407c3a5d8a628f73b2c4
+
+
+
+

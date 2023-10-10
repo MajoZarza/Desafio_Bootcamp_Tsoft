@@ -1,4 +1,4 @@
-/*package aut.testcreation.pages.grupo2;
+package aut.testcreation.pages.grupo2;
 
 import framework.engine.utils.grupo2.Rumbo_Base;
 import org.openqa.selenium.WebDriver;
@@ -98,4 +98,4 @@ public class Vuelos extends Rumbo_Base {
         scrollByLocator(locatorSiguiente);
         click(esperarPorElementoLocalizado(locatorSiguiente));
     }
-}*/
+}

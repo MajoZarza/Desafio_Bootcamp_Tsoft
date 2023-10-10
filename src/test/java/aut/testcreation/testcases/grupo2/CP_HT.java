@@ -3,11 +3,8 @@ package aut.testcreation.testcases.grupo2;
 import aut.testcreation.pages.grupo2.HomePage;
 import aut.testcreation.pages.grupo2.Hoteles;
 import framework.engine.selenium.DriverFactory;
-<<<<<<< HEAD
-=======
 import framework.engine.selenium.SeleniumTestBase;
 import framework.engine.utils.grupo2.Rumbo_Base;
->>>>>>> e1772b496f83d553c7f8407c3a5d8a628f73b2c4
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -15,37 +12,22 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-<<<<<<< HEAD
-=======
-
 import java.sql.Driver;
->>>>>>> e1772b496f83d553c7f8407c3a5d8a628f73b2c4
 import java.util.List;
 import java.util.Set;
 
 public class CP_HT extends SeleniumTestBase {
     WebDriver driver;
     HomePage homePage;
-<<<<<<< HEAD
-    //String rutaDriver = "C:\\Users\\mariana.palavecino\\Desktop\\Mariana\\Desafio_Bootcamp_Tsoft\\src\\test\\resources\\drivers\\chromedriver.exe";
-    // "C:\\Users\\guido.paparua\\Desktop\\BootCamp\\GIT\\Repo de todos - practica\\app\\src\\test\\resources\\drivers\\chromedriver.exe";
-    Hoteles hoteles;
-    String browser = "Chrome";
-    String property = "webdriver.chrome.driver";
+     Hoteles hoteles;
 
-=======
-    Hoteles hoteles; //= new Hoteles(driver);
->>>>>>> e1772b496f83d553c7f8407c3a5d8a628f73b2c4
 
 
     @BeforeEach
     public void preTests() {
-<<<<<<< HEAD
         hoteles = new Hoteles(DriverFactory.getDriver());
-=======
         driver= DriverFactory.getDriver();
         hoteles = new Hoteles(driver);
->>>>>>> e1772b496f83d553c7f8407c3a5d8a628f73b2c4
         homePage = new HomePage(driver);
         homePage.cargarPagina("https://www.rumbo.es/");
         homePage.maximizar();
