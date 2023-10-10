@@ -1,4 +1,4 @@
-package aut.testcreation.pages.grupo2;
+/*package aut.testcreation.pages.grupo2;
 
 import framework.engine.utils.grupo2.Rumbo_Base;
 import org.openqa.selenium.By;
@@ -36,4 +36,4 @@ public class Trenes extends Rumbo_Base {
         click(esperarPorElementoLocalizado(locatorBtnDiaVuelta));
         click(esperarPorElementoLocalizado(locatorBtnBuscar));
     }
-}
+}*/
