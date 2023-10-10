@@ -1,8 +1,12 @@
 
+<<<<<<< HEAD
 /*package aut.testcreation.testcases;
 
 package aut.testcreation.testcases;
 
+=======
+package aut.testcreation.testcases;
+>>>>>>> e1772b496f83d553c7f8407c3a5d8a628f73b2c4
 
 import aut.testcreation.pages.GoogleHomePage;
 import framework.engine.selenium.DriverFactory;
@@ -17,14 +21,18 @@ public class atc01_POM extends SeleniumTestBase {
 
     @Test
     @Tag("regresion")
-    void busquedaGoogle(){
+    void busquedaGoogle() {
         googleHomePage = new GoogleHomePage(DriverFactory.getDriver());
         googleHomePage.navegarAlHome();
         googleHomePage.buscarConBotonBuscar("Tsoft");
-        Assertions.assertEquals("Tsoft - Buscar con Google",googleHomePage.getUrlTitle());
+        Assertions.assertEquals("Tsoft - Buscar con Google", googleHomePage.getUrlTitle());
     }
+<<<<<<< HEAD
 
 }
 
 }*/
 
+=======
+}
+>>>>>>> e1772b496f83d553c7f8407c3a5d8a628f73b2c4

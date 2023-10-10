@@ -19,6 +19,44 @@ public class HomePage extends Rumbo_Base {
     //Para ir al icono de Ver más:
     By locatorBtnVerMas = By.xpath("//div[contains(text(), 'Ver más')]");
 
+<<<<<<< HEAD
+=======
+    //Dentro de Ver más para ir a Trenes:
+
+    By locatorBtnTrenes = By.xpath("//a[@title='Trenes']");
+    By locatorBtnSoloIda = By.xpath("//div[@class='d-1nwmwhy']");
+    By locatorBtnOrigenVuelos = By.xpath("//input[@aria-label='Origen']");
+    By locatorMadrid = By.xpath("//input[@value='Madrid (MAD)']");
+    By locatorBtnDestinoVuelos = By.xpath("//input[@aria-label='Destino']");
+    By locatorBarcelona = By.xpath("//input[@value='Barcelona (BCN)']");
+    By locatorBtnFechaIda = By.xpath("//button[@aria-label='Fecha de ida']");
+    By locatorBtnDiaIda = By.xpath("//button[contains(text(), '25')]");
+    By locatorBtnBuscar = By.xpath("//button[@type='submit']");
+
+
+    //Dentro de apartado Hoteles:
+
+    By locatorDestinoBarcelona = By.xpath("//label[@for=':R4sd9lalamt2mm:']");
+    By locatorEscribirBarcelona = By.xpath("//*[@id=\":R4sd9lalamt2mm:\"]");
+    By locatorElegirBarcelona = By.xpath("//input[@value='Barcelona']");
+    By locatorBtnFechaEntrada = By.xpath("//label[@class='d-kf04ay'][text()='Fecha de entrada']");
+    By locatorBtnMesEntrada = By.xpath("//span[@id='10' and text()='noviembre 2023']");
+    By locatorBtnDiaEntrada = By.xpath("//button[text()='1']");
+    By locatorBtnElegirDiaEntradaHotel = By.xpath("//button[text()='1']");
+
+    By locatorFechaIngreso = By.xpath("//button[@aria-label='Fecha de entrada']");
+    By locatorFechaSalida = By.xpath("//button[@aria-label='Fecha de salida]");
+    By locatorPersonasXhab = By.xpath("//span[@class='d-ocxq5f]");
+    By locatorSumarHabitacion = By.xpath("//button[text()='Añadir habitación]");
+
+
+
+
+    //agregue esto
+    By locatorSeul = By.xpath("//input[@value='Seúl (SEL)']");
+    By locatorGesel = By.xpath("//input[@value='Villa Gesell (VLG)']");
+
+>>>>>>> e1772b496f83d553c7f8407c3a5d8a628f73b2c4
 
     public HomePage(WebDriver driver) {
         super(driver);
@@ -54,6 +92,10 @@ public class HomePage extends Rumbo_Base {
     }
 
 
+<<<<<<< HEAD
+=======
+    public void busquedaVueloSoloIda(String origen, String destino) {
+>>>>>>> e1772b496f83d553c7f8407c3a5d8a628f73b2c4
 
     //------------------ TRENES ------------------------------------------------
 
