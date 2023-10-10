@@ -1,5 +1,7 @@
 package framework.engine.utils.grupo2;
 
+import framework.engine.selenium.DriverFactory;
+import framework.engine.selenium.SeleniumTestBase;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -22,7 +24,7 @@ public class Rumbo_Base {
         this.driver = driver;
     }
 
-    public Rumbo_Base(WebDriver driver) {this.driver = driver;}
+    public Rumbo_Base(WebDriver driver) {this.driver=driver;}
 
     public void click(By localizador) {
         driver.findElement(localizador).click();
@@ -83,17 +85,6 @@ public class Rumbo_Base {
 
     public void cerrarBrowser() {
         driver.quit();
-    }
-
-    public WebDriver conexionDriver(String browser, String ruta, String property) {
-        if (browser.equalsIgnoreCase("Chrome")) {
-            System.setProperty(property, ruta);
-            this.driver = new ChromeDriver();
-        } else if (browser.equalsIgnoreCase("Firefox")) {
-            System.setProperty(property, ruta);
-            this.driver = new FirefoxDriver();
-        }
-        return this.driver;
     }
 
     public void scrollByLocator (By localizador) {

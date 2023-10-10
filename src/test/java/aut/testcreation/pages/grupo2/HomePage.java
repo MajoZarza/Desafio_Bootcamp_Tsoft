@@ -52,15 +52,6 @@ public class HomePage extends Rumbo_Base {
 
 
 
-    By locatorBtnTrenes = By.xpath("//a[@title='Trenes']");
-    By locatorBtnSoloIda = By.xpath("//div[@class='d-1nwmwhy']");
-    By locatorBtnOrigenVuelos = By.xpath("//input[@aria-label='Origen']");
-    By locatorMadrid = By.xpath("//input[@value='Madrid (MAD)']");
-    By locatorBtnDestinoVuelos = By.xpath("//input[@aria-label='Destino']");
-    By locatorBarcelona = By.xpath("//input[@value='Barcelona (BCN)']");
-    By locatorBtnFechaIda = By.xpath("//button[@aria-label='Fecha de ida']");
-    By locatorBtnDiaIda = By.xpath("//button[contains(text(), '25')]");
-    By locatorBtnBuscar = By.xpath("//button[@type='submit']");
 
     //agregue esto
     By locatorSeul = By.xpath("//input[@value='Seúl (SEL)']");
@@ -109,7 +100,7 @@ public class HomePage extends Rumbo_Base {
     }
 
 
-    public void busquedaVueloSoloIda(String origen, String destino) throws InterruptedException {
+    public void busquedaVueloSoloIda(String origen, String destino) {
 
 
         click(esperarPorElementoLocalizado(locatorBtnVuelos));

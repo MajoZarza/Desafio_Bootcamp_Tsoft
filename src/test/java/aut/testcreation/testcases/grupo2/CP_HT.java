@@ -2,6 +2,9 @@ package aut.testcreation.testcases.grupo2;
 
 import aut.testcreation.pages.grupo2.HomePage;
 import aut.testcreation.pages.grupo2.Hoteles;
+import framework.engine.selenium.DriverFactory;
+import framework.engine.selenium.SeleniumTestBase;
+import framework.engine.utils.grupo2.Rumbo_Base;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -10,34 +13,24 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import java.sql.Driver;
 import java.util.List;
 import java.util.Set;
 
-public class CP_HT {
+public class CP_HT extends SeleniumTestBase {
     WebDriver driver;
     HomePage homePage;
-
-    String rutaDriver =
-            "C:\\Users\\mariana.palavecino\\Desktop\\Mariana\\Desafio_Bootcamp_Tsoft\\src\\test\\resources\\drivers\\chromedriver.exe";
-    // "C:\\Users\\guido.paparua\\Desktop\\BootCamp\\GIT\\Repo de todos - practica\\app\\src\\test\\resources\\drivers\\chromedriver.exe";
-
     Hoteles hoteles; //= new Hoteles(driver);
-    String browser = "Chrome";
-    String property = "webdriver.chrome.driver";
-
 
     @BeforeEach
     public void preTests() {
+        driver= DriverFactory.getDriver();
         hoteles = new Hoteles(driver);
         homePage = new HomePage(driver);
-        homePage.conexionDriver(browser, rutaDriver, property);
         homePage.cargarPagina("https://www.rumbo.es/");
         homePage.maximizar();
         homePage.cerrarCookies();
-
-
     }
-
 
     @Test
     //Reserva de Hotel - Añadir habitación
