@@ -16,12 +16,18 @@ import java.util.Set;
 public class CP_HT {
     WebDriver driver;
     HomePage homePage;
+<<<<<<< HEAD
 
     String rutaDriver =
             "C:\\Users\\mariana.palavecino\\Desktop\\Mariana\\Desafio_Bootcamp_Tsoft\\src\\test\\resources\\drivers\\chromedriver.exe";
            // "C:\\Users\\guido.paparua\\Desktop\\BootCamp\\GIT\\Repo de todos - practica\\app\\src\\test\\resources\\drivers\\chromedriver.exe";
 
     Hoteles hoteles; //= new Hoteles(driver);
+=======
+    Hoteles hoteles; //= new Hoteles(driver);
+    String rutaDriver ="C:\\Users\\maria.zarza\\Desktop\\Majo\\Desafio_Bootcamp_Tsoft\\src\\test\\resources\\Drivers\\chromedriver.exe";
+            //"C:\\Users\\guido.paparua\\Desktop\\BootCamp\\GIT\\Repo de todos - practica\\app\\src\\test\\resources\\drivers\\chromedriver.exe";
+>>>>>>> refs/remotes/origin/main
     String browser = "Chrome";
     String property = "webdriver.chrome.driver";
 
@@ -41,6 +47,7 @@ public class CP_HT {
 
     @Test
     //Reserva de Hotel - Añadir habitación
+<<<<<<< HEAD
     public void CP_HT_01() throws InterruptedException {
         Thread.sleep(3000);
         homePage.hoteles();
@@ -49,6 +56,10 @@ public class CP_HT {
         Thread.sleep(3000);
         homePage.buscarLupa();
         Thread.sleep(3000);
+=======
+    public void CP_HT_01(){
+
+>>>>>>> refs/remotes/origin/main
     }
 
     @Test
@@ -72,10 +83,14 @@ public class CP_HT {
 
     //Reserva de Habitación - con modificación de fecha - "Resumen de viaje"
 <<<<<<< HEAD
+<<<<<<< HEAD
     //public void CP_HT_03(){
 =======
     public void CP_HT_03(){
 >>>>>>> b9cf59dbbe06182fe7170f6e13bfd99ba3ac7750
+=======
+    public void CP_HT_03(){
+>>>>>>> refs/remotes/origin/main
 
 
     }
