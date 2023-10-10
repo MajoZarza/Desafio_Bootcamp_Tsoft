@@ -6,29 +6,31 @@ import org.openqa.selenium.WebDriver;
 
 public class Trenes extends Rumbo_Base {
 
-    By locatorBtnOrigenTrenes = By.xpath("//input[@aria-label='Origen']") ;
-    By locatorBtnDestinoTrenes = By.xpath("//input[@aria-label='Destino']") ;
-    By locatorBarcelona = By.xpath("//input[@value='Barcelona']") ;
-    By locatorMadrid = By.xpath("//input[@value='Madrid']") ;
+    By locatorBtnOrigenTrenes = By.xpath("//form/div/div/fieldset/div[1]/div/input") ;
+    By locatorBtnDestinoTrenes = By.xpath("//form/div/div/fieldset/div[3]/div/input") ;
+    By locatorBarcelona = By.xpath("//form/div/div/fieldset/div[3]/div/input[@value='Barcelona']") ;
+    By locatorMadrid = By.xpath("//form/div/div/fieldset/div[1]/div/input[@value='Madrid']") ;
     By locatorBtnFechaIda = By.xpath("//button[@aria-label='Fecha de ida']") ;
     By locatorBtnFechaVuelta = By.xpath("//button[@aria-label='Fecha de vuelta']") ;
     By locatorBtnDiaIda = By.xpath("//button[contains(text(), '15')]") ;
-    By locatorBtnDiaVuelta = By.xpath("//button[contains(text(), '17')]") ;
+    By locatorBtnDiaVuelta = By.xpath("//form/div[2]/div[2]/div/div/div/div/section/div/div/div/div[3]/div[2]/button[17]") ;
     By locatorBtnBuscar = By.xpath("//button[@type='submit']") ;
 
     public Trenes(WebDriver driver) {
         super(driver);
     }
 
-    public void reservaLargaError (String origen, String destino) throws InterruptedException {
+    public void reservaLargaError (String origen, String destino) {
         click(esperarPorElementoLocalizado(locatorBtnOrigenTrenes));
         escribirTexto(esperarPorElementoLocalizado(locatorBtnOrigenTrenes), origen);
-        enter(esperarPorElementoLocalizado(locatorBtnOrigenTrenes));
+        esperarXSegundos(5000);
+        //enter(esperarPorElementoLocalizado(locatorBtnOrigenTrenes));
         click(esperarPorElementoLocalizado(locatorMadrid));
+        esperarXSegundos(2000);
         click(esperarPorElementoLocalizado(locatorBtnDestinoTrenes));
         escribirTexto(esperarPorElementoLocalizado(locatorBtnDestinoTrenes), destino);
-        Thread.sleep(2000);
-        enter(esperarPorElementoLocalizado(locatorBtnDestinoTrenes));
+        esperarXSegundos(5000);
+        //enter(esperarPorElementoLocalizado(locatorBtnDestinoTrenes));
         click(esperarPorElementoLocalizado(locatorBarcelona));
         click(esperarPorElementoLocalizado(locatorBtnFechaIda));
         click(esperarPorElementoLocalizado(locatorBtnDiaIda));

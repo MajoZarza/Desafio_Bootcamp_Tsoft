@@ -31,7 +31,7 @@ public class CP_TR extends SeleniumTestBase {
 
     @Test
     //Error al querer reservar más de 31 noches - Busqueda Tren - Ida y Vuelta
-    public void CP_TR_01() throws InterruptedException {
+    public void CP_TR_01() {
         trenes.reservaLargaError("Madrid", "Barcelona");
     }
 
