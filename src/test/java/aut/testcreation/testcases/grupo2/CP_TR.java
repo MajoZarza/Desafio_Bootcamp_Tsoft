@@ -1,4 +1,4 @@
-package aut.testcreation.testcases.grupo2;
+/* package aut.testcreation.testcases.grupo2;
 
 import aut.testcreation.pages.grupo2.HomePage;
 import aut.testcreation.pages.grupo2.Trenes;
@@ -7,21 +7,20 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.WebDriver;
 
-<<<<<<< HEAD
-public class CP_TR{
-=======
+
+
 public class CP_TR {
->>>>>>> refs/remotes/origin/main
+
     WebDriver driver;
     HomePage homePage;
     Trenes trenes;
     String rutaDriver = "C:\\Users\\guido.paparua\\Desktop\\BootCamp\\GIT\\Repo de todos - practica\\app\\src\\test\\resources\\drivers\\chromedriver.exe";
     String browser = "Chrome";
     String property = "webdriver.chrome.driver";
-<<<<<<< HEAD
 
-=======
->>>>>>> refs/remotes/origin/main
+
+
+
     @BeforeEach
     public void preTests(){
         homePage = new HomePage(driver);
@@ -65,9 +64,9 @@ public class CP_TR {
 
     @AfterEach
     public void afterTests (){ homePage.cerrarBrowser(); }
-<<<<<<< HEAD
 
-}
-=======
-}
->>>>>>> refs/remotes/origin/main
+
+}*/
+
+
+

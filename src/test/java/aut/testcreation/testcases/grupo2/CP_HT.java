@@ -2,6 +2,7 @@ package aut.testcreation.testcases.grupo2;
 
 import aut.testcreation.pages.grupo2.HomePage;
 import aut.testcreation.pages.grupo2.Hoteles;
+import framework.engine.selenium.DriverFactory;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -9,33 +10,28 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-
 import java.util.List;
 import java.util.Set;
 
 public class CP_HT {
     WebDriver driver;
     HomePage homePage;
-
-    String rutaDriver =
-            "C:\\Users\\mariana.palavecino\\Desktop\\Mariana\\Desafio_Bootcamp_Tsoft\\src\\test\\resources\\drivers\\chromedriver.exe";
+    //String rutaDriver = "C:\\Users\\mariana.palavecino\\Desktop\\Mariana\\Desafio_Bootcamp_Tsoft\\src\\test\\resources\\drivers\\chromedriver.exe";
     // "C:\\Users\\guido.paparua\\Desktop\\BootCamp\\GIT\\Repo de todos - practica\\app\\src\\test\\resources\\drivers\\chromedriver.exe";
-
-    Hoteles hoteles; //= new Hoteles(driver);
+    Hoteles hoteles;
     String browser = "Chrome";
     String property = "webdriver.chrome.driver";
 
 
+
     @BeforeEach
     public void preTests() {
-        hoteles = new Hoteles(driver);
+        hoteles = new Hoteles(DriverFactory.getDriver());
         homePage = new HomePage(driver);
         homePage.conexionDriver(browser, rutaDriver, property);
         homePage.cargarPagina("https://www.rumbo.es/");
         homePage.maximizar();
         homePage.cerrarCookies();
-
-
     }
 
 
@@ -45,9 +41,9 @@ public class CP_HT {
         Thread.sleep(3000);
         homePage.hoteles();
         Thread.sleep(3000);
-        homePage.agregaHabitacion();
+        hoteles.agregarHabitacion();
         Thread.sleep(3000);
-        homePage.buscarLupa();
+        hoteles.buscarLupa();
         Thread.sleep(3000);
     }
 

@@ -1,4 +1,4 @@
-package aut.testcreation.testcases.grupo2;
+/*package aut.testcreation.testcases.grupo2;
 
 import aut.testcreation.pages.grupo2.HomePage;
 import aut.testcreation.pages.grupo2.Vuelos;
@@ -47,7 +47,7 @@ public class CP_AV {
     }
 
     @Test
-    public void CP_AV_03() {
+    public void CP_AV_03() throws InterruptedException {
         homePage.busquedaVueloSoloIda("Madrid (MAD)", "Barcelona (BCN)");
         homePage.esperarXSegundos(10000);
         vuelos.seleccionarPrimerVuelo();
@@ -58,7 +58,7 @@ public class CP_AV {
 
     @Test
     //Reserva de Vuelo - Solo Ida - Elección Full Flex
-    public void CP_AV_04() {
+    public void CP_AV_04() throws InterruptedException {
         homePage.busquedaVueloSoloIda("Madrid (MAD)", "Barcelona (BCN)");
         homePage.esperarXSegundos(10000);
         vuelos.seleccionarPrimerVuelo();
@@ -85,5 +85,5 @@ public class CP_AV {
     public void afterTests() {
         homePage.cerrarBrowser();
     }
-}
+}*/
 

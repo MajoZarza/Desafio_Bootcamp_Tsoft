@@ -65,7 +65,8 @@ public class Rumbo_Base {
     }
 
     public WebElement esperarPorElementoLocalizado(By localizador) {
-        espera = new WebDriverWait(this.getDriver(), 20);
+        espera = new WebDriverWait(this.getDriver(),
+                20);
         return espera.until(ExpectedConditions.presenceOfElementLocated(localizador));
     }
 

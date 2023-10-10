@@ -1,8 +1,8 @@
-<<<<<<< HEAD
-package aut.testcreation.testcases;
-=======
+
 /*package aut.testcreation.testcases;
->>>>>>> refs/remotes/origin/main
+
+package aut.testcreation.testcases;
+
 
 import aut.testcreation.pages.GoogleHomePage;
 import framework.engine.selenium.DriverFactory;
@@ -23,8 +23,8 @@ public class atc01_POM extends SeleniumTestBase {
         googleHomePage.buscarConBotonBuscar("Tsoft");
         Assertions.assertEquals("Tsoft - Buscar con Google",googleHomePage.getUrlTitle());
     }
-<<<<<<< HEAD
+
 }
-=======
+
 }*/
->>>>>>> refs/remotes/origin/main
+

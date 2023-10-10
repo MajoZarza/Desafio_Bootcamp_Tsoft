@@ -1,6 +1,6 @@
-<<<<<<< HEAD
+
 package aut.testcreation.testcases;
-=======
+
 /*package aut.testcreation.testcases;
 >>>>>>> refs/remotes/origin/main
 
@@ -33,8 +33,8 @@ public class TestDemo extends SeleniumTestBase {
         Thread.sleep(5000);
         Assertions.assertTrue(true);
     }
-<<<<<<< HEAD
+
 }
-=======
+
 }*/
->>>>>>> refs/remotes/origin/main
+
