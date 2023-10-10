@@ -18,7 +18,6 @@ public class Hoteles extends Rumbo_Base{
     By locatorFechaSalida = By.className("d-1ktehkr");
 
 
-git
     By locatorBtnBuscar = By.xpath("//button[@type='submit']");
 
     public Hoteles(WebDriver driver) {
