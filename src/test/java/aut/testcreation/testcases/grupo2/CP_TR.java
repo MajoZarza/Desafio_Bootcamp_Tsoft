@@ -2,6 +2,7 @@ package aut.testcreation.testcases.grupo2;
 
 import aut.testcreation.pages.grupo2.HomePage;
 import aut.testcreation.pages.grupo2.Trenes;
+import aut.testcreation.pages.grupo2.Vuelos;
 import framework.engine.selenium.DriverFactory;
 import framework.engine.selenium.SeleniumTestBase;
 import framework.engine.utils.grupo2.Rumbo_Base;
@@ -18,12 +19,14 @@ public class CP_TR extends SeleniumTestBase {
     WebDriver driver;
     HomePage homePage;
     Trenes trenes;
+    Vuelos vuelos;
 
     @BeforeEach
     public void preTests() {
         driver = DriverFactory.getDriver();
         homePage = new HomePage(driver);
         trenes = new Trenes(driver);
+        vuelos = new Vuelos (driver);
         homePage.cargarPagina("https://www.rumbo.es/trenes/");
         //homePage.cargarPagina("https://www.rumbo.es/");
         //trenes.entraraTrenes();
@@ -36,6 +39,11 @@ public class CP_TR extends SeleniumTestBase {
     public void CP_TR_01() {
         trenes.reservaLargaError("Madrid", "Barcelona");
         homePage.esperarXSegundos(1000);
+
+
+
+        // comparar el mensaje con //span[@role='alert']
+        // Lo sentimos, no se pueden reservar más de 31 noches
 
     }
 
@@ -61,18 +69,26 @@ public class CP_TR extends SeleniumTestBase {
     }
 
     @Test
-    //Reserva Tren - Solo ida - eligiendo opción el más rápido
+    //Error no se ingresa ciudad de destino - Busqueda Tren
     public void CP_TR_04() {
 
     }
 
     @Test
-    //Error por no ingresar el DNI en la registración - Reserva Tren - Solo ida
+    //Reserva Tren - Solo ida - eligiendo opción el más rápido
     public void CP_TR_05() {
-
+        trenes.reservaSoloIda("Madrid", "Barcelona");
+        homePage.esperarXSegundos(5000);
+        trenes.seleccionarPrimerVuelo();
+        homePage.esperarXSegundos(10000);
+        vuelos.completarFormularioContacto("Dario", "Daro", "darioa@gmail.com", "198889997");
+        vuelos.completarFormularioDireccion("Gran via", "10", "28006", "Madrid");
+        vuelos.completarFormularioPasajero("15", "Enero", "1991");
+        trenes.sinProteccionAdicional();
     }
 
     @Test
+    //Error por no ingresar el DNI en la registración - Reserva Tren - Solo ida
     public void CP_TR_06() {
 
     }
