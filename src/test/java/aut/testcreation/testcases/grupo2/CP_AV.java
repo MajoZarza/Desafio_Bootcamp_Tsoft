@@ -5,11 +5,11 @@ import framework.engine.selenium.DriverFactory;
 import aut.testcreation.pages.grupo2.HomePage;
 import aut.testcreation.pages.grupo2.Vuelos;
 import framework.engine.selenium.SeleniumTestBase;
-import framework.engine.utils.grupo2.Rumbo_Base;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 public class CP_AV extends SeleniumTestBase {
@@ -29,7 +29,17 @@ public class CP_AV extends SeleniumTestBase {
     //Reserva de Vuelo - Multidestino
     public void CP_AV_01() {
         homePage.vuelos();
-        vuelos.multidestino();
+        vuelos.abrirMultidestino();
+        vuelos.borrartodos();
+        vuelos.busquedaVueloMultidestinoViaje1Origen("Barcelona");
+        homePage.esperarXSegundos(1000);
+        vuelos.busquedaVueloMultidestinoViaje1Destino("Madrid");
+        homePage.esperarXSegundos(1000);
+        vuelos.busquedaVueloMultidestinoViaje2Destino("Buenos aires");
+        homePage.esperarXSegundos(3000);
+        vuelos.buscarMultidestino();
+        homePage.esperarXSegundos(5000);
+
     }
 
     @Test
@@ -53,7 +63,7 @@ public class CP_AV extends SeleniumTestBase {
 
     @Test
     //Reserva de Vuelo - Solo Ida - Elección Full Flex
-    public void CP_AV_04() throws InterruptedException {
+    public void CP_AV_04()  {
         homePage.busquedaVueloSoloIda("Madrid (MAD)", "Barcelona (BCN)");
         homePage.esperarXSegundos(10000);
         vuelos.seleccionarPrimerVuelo();
@@ -73,10 +83,14 @@ public class CP_AV extends SeleniumTestBase {
     @Test
     //Busqueda Vuelo - Ida y vuelta - con opción Primera Clase
     public void CP_AV_06() {
+        homePage.busquedaVueloSoloIda("Madrid (MAD)", "Barcelona (BCN)");
+        homePage.esperarXSegundos(10000);
+        vuelos.flechaparacambiarop();
+        homePage.esperarXSegundos(3000);
 
     }
 
-    @AfterEach
+  @AfterEach
     public void afterTests() {
         homePage.cerrarBrowser();
     }

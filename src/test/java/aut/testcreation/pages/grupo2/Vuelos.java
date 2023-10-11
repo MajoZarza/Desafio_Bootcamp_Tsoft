@@ -28,7 +28,31 @@ public class Vuelos extends Rumbo_Base {
 
     By locatorMultidestino = By.xpath("//a[contains(text(),\"Multidestino\")]");
 
+    By locatorBtnBorrartodos = By.xpath("//*[@id=\"modals\"]/div[2]/div/div/div/div[2]/div/div[2]/div[1]/div/button");
 
+    By locatorCiudadparaMultidestino = By.xpath("//input[@placeholder='Ciudad, aeropuerto o lugar']");
+    By viaje1OrigenLocator= By.xpath("//*[@id=\"modals\"]/div[2]/div/div/div/div[2]/div/div[2]/div[2]/div[2]/div[1]/div/div/div[2]/div/div/div/div[1]/div/div/div");
+    By viaje1DestinoLocator=By.xpath("//*[@id=\"modals\"]/div[2]/div/div/div/div[2]/div/div[2]/div[2]/div[2]/div[2]/div/div/div[2]/div/div/div/div[2]/div/div/div/div[1]/div");
+    //By viaje2OrigenLocator= By.xpath("//*[@id=\"modals\"]/div[2]/div/div/div/div[2]/div/div[2]/div[3]/div[2]/div[1]/div/div/div[2]/div/div/div/div[1]/div/div/div");
+    By viaje2DestinoLocator=By.xpath("//*[@id=\"modals\"]/div[2]/div/div/div/div[2]/div/div[2]/div[3]/div[2]/div[2]/div/div/div[2]/div/div/div/div[2]/div");
+
+    By locatorDestinoBarcelona = By.xpath("//label[@for=':R4sd9lalamt2mm:']");
+    By locatorEscribirBarcelona = By.xpath("//*[@id=\":R4sd9lalamt2mm:\"]");
+    By locatorElegirBarcelona = By.xpath("//input[@value='Barcelona']");
+
+    By locatorBtnOrigenVuelos = By.xpath("//input[@aria-label='Origen']");
+    By locatorMadrid = By.xpath("//input[@value='Madrid (MAD)']");
+    By locatorBtnDestinoVuelos = By.xpath("//input[@aria-label='Destino']");
+    By locatorBarcelona = By.xpath("//input[@value='Barcelona (BCN)']");
+    By locatorBtnFechaIda = By.xpath("//button[@aria-label='Fecha de ida']");
+    By locatorBtnDiaIda = By.xpath("//button[contains(text(), '25')]");
+    By locatorBtnBuscar = By.xpath("//button[@type='submit']");
+
+    By locatorBtnBuscarMultidestino = By.xpath("//*[@id=\"modals\"]/div[2]/div/div/div/div[2]/div/div[3]/div/button");
+
+By locatorBtnFlecha = By.xpath("//*[@id=\"hub-csw-container\"]/div/div[2]/div/form/div/div[6]/div[1]/div/div[2]/div/div[2]/section/div/div/div[2]/button");
+
+By locatorPasajeros = By.xpath("//*[@id=\"hub-csw-container\"]/div/div[2]/div/form/div/div[6]/div/div/div/button");
     public Vuelos(WebDriver driver) {
         super(driver);
     }
@@ -42,13 +66,24 @@ public class Vuelos extends Rumbo_Base {
         scrollByLocator(locatorTarifaClassic);
         click(esperarPorElementoLocalizado(locatorTarifaClassic));
     }
+
     public void tarifaFlex() {
         scrollByLocator(locatorTarifaFlex);
         click(esperarPorElementoLocalizado(locatorTarifaFlex));
     }
 
-    public void multidestino() {
+    public void abrirMultidestino() {
+        String paginaOriginal = driver.getWindowHandle();
+
         click(esperarPorElementoLocalizado(locatorMultidestino));
+
+        esperarXSegundos(2000);
+        for (String windowHandle : driver.getWindowHandles()) {
+            if (!paginaOriginal.contentEquals(windowHandle)) {
+                driver.switchTo().window(windowHandle);
+                break;
+            }
+        }
     }
 
     public void completarFormularioContacto(String nombre, String apellido, String correo, String telefono) {
@@ -98,4 +133,44 @@ public class Vuelos extends Rumbo_Base {
         scrollByLocator(locatorSiguiente);
         click(esperarPorElementoLocalizado(locatorSiguiente));
     }
+
+    public void borrartodos() {
+        click(locatorBtnBorrartodos);
+        esperarXSegundos(3000);
+
+    }
+    public void CiudadparaMultidestino() {
+        scrollByLocator(locatorCiudadparaMultidestino);
+        click(esperarPorElementoLocalizado(locatorCiudadparaMultidestino));
+    }
+
+    public void busquedaVueloMultidestinoViaje1Origen(String destino) {
+
+        escribirTexto(esperarPorElementoLocalizado(locatorCiudadparaMultidestino), destino);
+        esperarXSegundos(1000);
+        click(viaje1OrigenLocator);
+    }
+    public void busquedaVueloMultidestinoViaje1Destino(String destino) {
+
+        escribirTexto(esperarPorElementoLocalizado(locatorCiudadparaMultidestino), destino);
+        esperarXSegundos(1000);
+        click(viaje1DestinoLocator);
+    }
+
+    public void busquedaVueloMultidestinoViaje2Destino(String destino) {
+
+        escribirTexto(esperarPorElementoLocalizado(locatorCiudadparaMultidestino), destino);
+        esperarXSegundos(1000);
+        click(viaje2DestinoLocator);
+    }
+    public void buscarMultidestino(){click(locatorBtnBuscarMultidestino);
+        esperarXSegundos(2000);
+    }
+
+    public void flechaparacambiarop(){click(locatorBtnFlecha);
+        esperarXSegundos(2000);
+
+    }
 }
+
+
