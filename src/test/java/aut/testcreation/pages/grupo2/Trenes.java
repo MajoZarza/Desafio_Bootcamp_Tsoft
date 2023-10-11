@@ -42,6 +42,7 @@ public class Trenes extends Rumbo_Base {
 
     By locatorSinProteccionAdicional = By.xpath("//div[@class='insurance__noThanks-expandable-left-box']");
     By locatorMensajeErrorTrenes = By.xpath("//span[@role='alert']");
+    By locatorMensajeErrorEmail = By.xpath("//span[contains(text(), 'Introduce un email válido')]");
 
 
     public Trenes(WebDriver driver) {
@@ -187,6 +188,9 @@ public class Trenes extends Rumbo_Base {
 
     public String obtenerError(){
         return obtenerTexto(esperarPorElementoLocalizado(locatorMensajeErrorTrenes));
+    }
+    public String obtenerErrorEmail(){
+        return obtenerTexto(esperarPorElementoLocalizado(locatorMensajeErrorEmail));
     }
 
     public void seleccionarPrimerTrenParaReserva() {

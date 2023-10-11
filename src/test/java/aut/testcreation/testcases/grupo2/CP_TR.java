@@ -59,7 +59,13 @@ public class CP_TR extends SeleniumTestBase {
     @Test
     //Error por querer ingresar email inválido  - Reserva Tren
     public void CP_TR_03() {
-
+        trenes.reservaSoloIda("Madrid", "Barcelona");
+        homePage.esperarXSegundos(2000);
+        trenes.seleccionarPrimerVuelo();
+        homePage.esperarXSegundos(2000);
+        vuelos.completarFormularioContacto("Dario", "Daro", "darioa@@gmail.com", "198889997");
+        homePage.esperarXSegundos(2000);
+        Assertions.assertEquals(("Introduce un email válido"), trenes.obtenerErrorEmail());
     }
 
     @Test
