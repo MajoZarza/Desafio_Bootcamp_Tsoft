@@ -1,3 +1,4 @@
+
 package aut.testcreation.pages.grupo2;
 
 import framework.engine.utils.grupo2.Rumbo_Base;
@@ -8,37 +9,125 @@ import org.openqa.selenium.WebElement;
 
 public class Trenes extends Rumbo_Base {
 
-    By locatorBtnOrigenTrenes = By.xpath("//form/div/div/fieldset/div[1]/div/input") ;
-    By locatorBtnDestinoTrenes = By.xpath("//form/div/div/fieldset/div[3]/div/input") ;
-    By locatorBarcelona = By.xpath("//form/div/div/fieldset/div[3]/div/input[@value='Barcelona']") ;
-    By locatorMadrid = By.xpath("//form/div/div/fieldset/div[1]/div/input[@value='Madrid']") ;
-    By locatorBtnFechaIda = By.xpath("//button[@aria-label='Fecha de ida']") ;
-    By locatorBtnFechaVuelta = By.xpath("//button[@aria-label='Fecha de vuelta']") ;
-    By locatorBtnDiaIda = By.xpath("//form/div[2]/div/div/div/div/div/section/div/div/div/div[2]/div[2]/button[6]") ;
-    By locatorBtnDiaVuelta = By.xpath("//form/div[2]/div[2]/div/div/div/div/section/div/div/div/div[3]/div[2]/button[30]") ;
-    By locatorBtnBuscar = By.xpath("//button[@type='submit']") ;
-    By locatorSoloIda = By.xpath("//div[contains(text(), 'Solo ida')]") ;
+
+    //By locatorBtnVerMas = By.xpath("//div[@class='MenuLinkstyled__MenuLinkWrapper-sc-1dkmpyp-2 ixtBwj'])[11]");
+
+    //By locatorBtnTrenes = By.xpath("//div[@class='MenuLinkstyled__MenuLinkWrapper-sc-1dkmpyp-4 KZClY' and text()='Trenes']");
+
+    By locatorBtnOrigenTrenes = By.xpath("//input[@aria-label='Origen']");
+    By locatorBtnDestinoTrenes = By.xpath("//input[@aria-label='Destino']");
+    By locatorBarcelona = By.xpath("//input[@value='Barcelona']");
+    By locatorMadrid = By.xpath("//input[@value='Madrid']");
+    By locatorBtnFechaIda = By.xpath("//button[@aria-label='Fecha de ida']");
+    By locatorBtnFechaVuelta = By.xpath("//button[@aria-label='Fecha de vuelta']");
+    By locatorBtnDiaIda = By.xpath("//button[contains(text(), '15')]");
+
+    By locatorBtnDiaVuelta = By.xpath("By.xpath(\"//form/div[2]/div[2]/div/div/div/div/section/div/div/div/div[3]/div[2]/button[30]\")");
+
+    By locatorBtnDiaVueltaotro = By.xpath("//button[@class=\"d-1ktehkr\" and text()='25']");
+
+    By locatorBtnBuscar = By.xpath("//button[@aria-label='Buscar']");
+
+    By locatorSoloIda = By.xpath("//div[contains(text(), 'Solo ida')]");
+
     By locatorPrimerTren = By.xpath("//div[@class='trip-collection-view__trips-container-top']");
+
     By locatorSeleccionar = By.xpath("//button[contains(text(), 'Seleccionar')]");
+
+    By locatorNombreContactoTren = By.xpath("//input[@name='name']");
+    By locatorApellidoContactoTren = By.xpath("//input[@name='surname']");
+    By locatorCorreoContactoTren = By.xpath("//input[@name='email']");
+
+    By locatorTelefono = By.xpath("//input[@name='phone']");
+
     By locatorSinProteccionAdicional = By.xpath("//div[@class='insurance__noThanks-expandable-left-box']");
     //WebElement locatorError = driver.findElement(By.xpath("//span[@role='alert']"));
     //String textoError = locatorError.getText();
+
 
     public Trenes(WebDriver driver) {
         super(driver);
     }
 
-    public void reservaLargaError (String origen, String destino) {
+
+    public void completarFormularioContactoTren(String nombre, String apellido, String correo, String telefono) {
+        click(esperarPorElementoLocalizado(locatorNombreContactoTren));
+        escribirTexto(esperarPorElementoLocalizado(locatorNombreContactoTren), nombre);
+        click(esperarPorElementoLocalizado(locatorApellidoContactoTren));
+        escribirTexto(esperarPorElementoLocalizado(locatorApellidoContactoTren), apellido);
+        scrollByLocator(locatorCorreoContactoTren);
+        click(esperarPorElementoLocalizado(locatorCorreoContactoTren));
+        escribirTexto(esperarPorElementoLocalizado(locatorCorreoContactoTren), correo);
+        scrollByLocator(locatorTelefono);
+        click(esperarPorElementoLocalizado(locatorTelefono));
+        escribirTexto(esperarPorElementoLocalizado(locatorTelefono), telefono);
+        enter(esperarPorElementoLocalizado(locatorTelefono));
+    }
+
+    public void buscarLupa() {
+        click(locatorBtnBuscar);
+    }
+
+   /* public void entraraTrenes() {
+        click(esperarPorElementoLocalizado(locatorBtnVerMas));
+        esperarXSegundos(1000);
+        click(esperarPorElementoLocalizado(locatorBtnTrenes));
+        esperarXSegundos(1000);
+    }
+
+
+
+ */
+
+    public void reservaLargaError(String origen, String destino) {
         click(esperarPorElementoLocalizado(locatorBtnOrigenTrenes));
         esperarXSegundos(2000);
         escribirTexto(esperarPorElementoLocalizado(locatorBtnOrigenTrenes), origen);
+        esperarXSegundos(2000);
+        //enter(esperarPorElementoLocalizado(locatorBtnOrigenTrenes));
         esperarXSegundos(2000);
         click(esperarPorElementoLocalizado(locatorMadrid));
         esperarXSegundos(2000);
         click(esperarPorElementoLocalizado(locatorBtnDestinoTrenes));
         esperarXSegundos(2000);
         escribirTexto(esperarPorElementoLocalizado(locatorBtnDestinoTrenes), destino);
+        //enter(esperarPorElementoLocalizado(locatorBtnDestinoTrenes));
+        click(esperarPorElementoLocalizado(locatorBarcelona));
         esperarXSegundos(2000);
+        click(esperarPorElementoLocalizado(locatorBtnFechaIda));
+        esperarXSegundos(2000);
+        click(esperarPorElementoLocalizado(locatorBtnDiaIda));
+        esperarXSegundos(2000);
+        click(esperarPorElementoLocalizado(locatorBtnDiaVuelta));
+        esperarXSegundos(2000);
+        click(esperarPorElementoLocalizado(locatorBtnBuscar));
+        esperarXSegundos(2000);
+    }
+
+
+    public void reservaTren(String origen, String destino) {
+        click(esperarPorElementoLocalizado(locatorBtnOrigenTrenes));
+        esperarXSegundos(1000);
+        escribirTexto(esperarPorElementoLocalizado(locatorBtnOrigenTrenes), origen);
+        esperarXSegundos(1000);
+        //enter(esperarPorElementoLocalizado(locatorBtnOrigenTrenes));
+        click(esperarPorElementoLocalizado(locatorMadrid));
+        click(esperarPorElementoLocalizado(locatorBtnDestinoTrenes));
+        esperarXSegundos(1000);
+        escribirTexto(esperarPorElementoLocalizado(locatorBtnDestinoTrenes), destino);
+        esperarXSegundos(1500);
+        // enter(esperarPorElementoLocalizado(locatorBtnDestinoTrenes));
+        click(esperarPorElementoLocalizado(locatorBarcelona));
+        click(esperarPorElementoLocalizado(locatorBtnFechaIda));
+        click(esperarPorElementoLocalizado(locatorBtnDiaIda));
+        click(esperarPorElementoLocalizado(locatorBtnFechaVuelta));
+        esperarXSegundos(1000);
+
+    }
+
+    public void seleccionarPrimerTren() {
+
+        esperarXSegundos(5000);
         click(esperarPorElementoLocalizado(locatorBarcelona));
         esperarXSegundos(2000);
         click(esperarPorElementoLocalizado(locatorBtnFechaIda));
@@ -50,7 +139,8 @@ public class Trenes extends Rumbo_Base {
         click(esperarPorElementoLocalizado(locatorBtnBuscar));
         //Assert.assertEquals("Lo sentimos, no se pueden reservar más de 31 noches", textoError);
     }
-    public void reservaSoloIda (String origen, String destino) {
+
+    public void reservaSoloIda(String origen, String destino) {
         click(esperarPorElementoLocalizado(locatorSoloIda));
         esperarXSegundos(2000);
         click(esperarPorElementoLocalizado(locatorBtnOrigenTrenes));
@@ -62,7 +152,7 @@ public class Trenes extends Rumbo_Base {
         click(esperarPorElementoLocalizado(locatorBtnDestinoTrenes));
         esperarXSegundos(2000);
         escribirTexto(esperarPorElementoLocalizado(locatorBtnDestinoTrenes), destino);
-        esperarXSegundos(5000);
+        esperarXSegundos(2000);
         click(esperarPorElementoLocalizado(locatorBarcelona));
         esperarXSegundos(2000);
         click(esperarPorElementoLocalizado(locatorBtnFechaIda));
@@ -73,13 +163,19 @@ public class Trenes extends Rumbo_Base {
     }
 
     public void seleccionarPrimerVuelo() {
+
         click(esperarPorElementoLocalizado(locatorPrimerTren));
         click(esperarPorElementoLocalizado(locatorSeleccionar));
     }
 
-    public void sinProteccionAdicional () {
+    public void sinProteccionAdicional() {
         click(esperarPorElementoLocalizado(locatorSinProteccionAdicional));
     }
 
 
 }
+
+
+
+
+

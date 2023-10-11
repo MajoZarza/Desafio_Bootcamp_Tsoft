@@ -21,11 +21,13 @@ public class CP_TR extends SeleniumTestBase {
 
     @BeforeEach
     public void preTests() {
-        driver= DriverFactory.getDriver();
+        driver = DriverFactory.getDriver();
         homePage = new HomePage(driver);
         trenes = new Trenes(driver);
         vuelos = new Vuelos (driver);
         homePage.cargarPagina("https://www.rumbo.es/trenes/");
+        //homePage.cargarPagina("https://www.rumbo.es/");
+        //trenes.entraraTrenes();
         homePage.maximizar();
         homePage.cerrarCookies();
     }
@@ -34,14 +36,27 @@ public class CP_TR extends SeleniumTestBase {
     //Error al querer reservar más de 31 noches - Busqueda Tren - Ida y Vuelta
     public void CP_TR_01() {
         trenes.reservaLargaError("Madrid", "Barcelona");
+        homePage.esperarXSegundos(1000);
+
+
 
         // comparar el mensaje con //span[@role='alert']
         // Lo sentimos, no se pueden reservar más de 31 noches
+
     }
+
 
     @Test
     //Reserva Tren - Ida y vuelta
     public void CP_TR_02() {
+        trenes.reservaTren("Madrid", "Barcelona");
+        homePage.esperarXSegundos(1000);
+        trenes.buscarLupa();
+        homePage.esperarXSegundos(5000);
+        trenes.seleccionarPrimerTren();
+        homePage.esperarXSegundos(3000);
+        trenes.completarFormularioContactoTren("Dario", "Daro", "darioa@gmail.com", "198889997");
+
 
     }
 
@@ -81,7 +96,11 @@ public class CP_TR extends SeleniumTestBase {
     public void afterTests (){ homePage.cerrarBrowser(); }
 
 
+
+
 }
+
+
 
 
 
