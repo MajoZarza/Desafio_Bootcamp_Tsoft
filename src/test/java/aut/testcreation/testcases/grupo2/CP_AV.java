@@ -76,7 +76,14 @@ public class CP_AV extends SeleniumTestBase {
     @Test
     //Busqueda Vuelo - Solo ida - con opción Tarjeta Maestro
     public void CP_AV_05() {
-
+        homePage.busquedaVueloSoloIdaMaestro("Madrid (MAD)", "Barcelona (BCN)");
+        homePage.esperarXSegundos(10000);
+        vuelos.seleccionarPrimerVuelo();
+        vuelos.tarifaFlex();
+        vuelos.completarFormularioContacto("Dario", "Daro", "darioa@gmail.com", "198889997");
+        vuelos.completarFormularioDireccion("Gran via", "10", "28006", "Madrid");
+        vuelos.completarFormularioPasajero("15", "Enero", "1991");
+        vuelos.equipajeFacturado();
     }
 
     @Test

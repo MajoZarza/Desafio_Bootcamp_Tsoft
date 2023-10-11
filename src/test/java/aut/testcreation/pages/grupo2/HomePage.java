@@ -26,6 +26,8 @@ public class HomePage extends Rumbo_Base {
 
     By locatorBtnTrenes = By.xpath("//a[@title='Trenes']");
     By locatorBtnSoloIda = By.xpath("//div[@class='d-1nwmwhy']");
+    By locatorBtnMediosPago = By.xpath("//form/div/div[2]/div/div/div/div/button");
+    By locatorBtnMaestro = By.xpath("//form/div/div[2]/div/div/div/div[2]/div/section/ul/li[4]");
     By locatorBtnOrigenVuelos = By.xpath("//input[@aria-label='Origen']");
     By locatorMadrid = By.xpath("//input[@value='Madrid (MAD)']");
     By locatorBtnDestinoVuelos = By.xpath("//input[@aria-label='Destino']");
@@ -104,6 +106,37 @@ public class HomePage extends Rumbo_Base {
         click(esperarPorElementoLocalizado(locatorBtnVuelos));
         esperarXSegundos(2000);
         click(esperarPorElementoLocalizado(locatorBtnSoloIda));
+        esperarXSegundos(2000);
+        click(esperarPorElementoLocalizado(locatorBtnOrigenVuelos));
+        esperarXSegundos(2000);
+        escribirTexto(esperarPorElementoLocalizado(locatorBtnOrigenVuelos), origen);
+        esperarXSegundos(2000);
+        click(esperarPorElementoLocalizado(locatorMadrid));
+        esperarXSegundos(2000);
+        click(esperarPorElementoLocalizado(locatorBtnDestinoVuelos));
+        esperarXSegundos(2000);
+        escribirTexto(esperarPorElementoLocalizado(locatorBtnDestinoVuelos), destino);
+        esperarXSegundos(2000);
+        click(esperarPorElementoLocalizado(locatorBarcelona));
+        esperarXSegundos(2000);
+        click(esperarPorElementoLocalizado(locatorBtnFechaIda));
+        esperarXSegundos(2000);
+        click(esperarPorElementoLocalizado(locatorBtnDiaIda));
+        esperarXSegundos(2000);
+        click(esperarPorElementoLocalizado(locatorBtnOrigenVuelos));
+        esperarXSegundos(2000);
+        click(esperarPorElementoLocalizado(locatorBtnDestinoVuelos));
+        esperarXSegundos(2000);
+        click(esperarPorElementoLocalizado(locatorBtnBuscar));
+    }
+    public void busquedaVueloSoloIdaMaestro(String origen, String destino)  {
+        click(esperarPorElementoLocalizado(locatorBtnVuelos));
+        esperarXSegundos(2000);
+        click(esperarPorElementoLocalizado(locatorBtnSoloIda));
+        esperarXSegundos(2000);
+        click(esperarPorElementoLocalizado(locatorBtnMediosPago));
+        esperarXSegundos(2000);
+        click(esperarPorElementoLocalizado(locatorBtnMaestro));
         esperarXSegundos(2000);
         click(esperarPorElementoLocalizado(locatorBtnOrigenVuelos));
         esperarXSegundos(2000);
