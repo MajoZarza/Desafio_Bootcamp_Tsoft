@@ -46,9 +46,8 @@ public class CP_AV extends SeleniumTestBase {
     //Error por no encontrar resultados - Reserva de Vuelo solo IDA
     public void CP_AV_02()  {
     homePage.busquedaVueloSoloIdaOtroDestino("Villa Gesell (VLG)", "Seúl (SEL)");
-    homePage.esperarXSegundos(100000);
-    Assertions.assertTrue(true);
-
+    homePage.esperarXSegundos(3000);
+    Assertions.assertEquals(("No hemos encontrado ningún resultado con tus criterios de búsqueda."), homePage.obtenerError());
     }
 
     @Test

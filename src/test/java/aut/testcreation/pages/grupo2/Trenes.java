@@ -41,7 +41,7 @@ public class Trenes extends Rumbo_Base {
     By locatorTelefono = By.xpath("//input[@name='phone']");
 
     By locatorSinProteccionAdicional = By.xpath("//div[@class='insurance__noThanks-expandable-left-box']");
-    By locatorMensajeError = By.xpath("//span[@role='alert']");
+    By locatorMensajeErrorTrenes = By.xpath("//span[@role='alert']");
 
 
     public Trenes(WebDriver driver) {
@@ -134,7 +134,6 @@ public class Trenes extends Rumbo_Base {
         click(esperarPorElementoLocalizado(locatorBtnDiaVuelta));
         esperarXSegundos(2000);
         click(esperarPorElementoLocalizado(locatorBtnBuscar));
-        //Assert.assertEquals("Lo sentimos, no se pueden reservar más de 31 noches", textoError);
     }
 
     public void reservaSoloIda(String origen, String destino) {
@@ -170,7 +169,7 @@ public class Trenes extends Rumbo_Base {
     }
 
     public String obtenerError(){
-        return obtenerTexto(esperarPorElementoLocalizado(locatorMensajeError));
+        return obtenerTexto(esperarPorElementoLocalizado(locatorMensajeErrorTrenes));
     }
 
 

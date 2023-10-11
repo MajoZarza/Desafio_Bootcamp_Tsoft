@@ -53,6 +53,8 @@ public class HomePage extends Rumbo_Base {
     //agregue esto
     By locatorSeul = By.xpath("//input[@value='Seúl (SEL)']");
     By locatorGesel = By.xpath("//input[@value='Villa Gesell (VLG)']");
+    By locatorMensajeErrorVuelos = By.xpath("//div[contains(text(), 'No hemos encontrado ningún resultado con tus criterios de búsqueda.')]");
+
 
 
     public HomePage(WebDriver driver) {
@@ -95,6 +97,7 @@ public class HomePage extends Rumbo_Base {
     public void fechaIda() {
         click(esperarPorElementoLocalizado(locatorBtnFechaIda));
     }
+
 
 
     public void busquedaVueloSoloIda(String origen, String destino)  {
@@ -160,18 +163,20 @@ public class HomePage extends Rumbo_Base {
         click(esperarPorElementoLocalizado(locatorBtnSoloIda));
         click(esperarPorElementoLocalizado(locatorBtnOrigenVuelos));
         escribirTexto(esperarPorElementoLocalizado(locatorBtnOrigenVuelos), origen);
-        esperarXSegundos(1000);
-        //enter(esperarPorElementoLocalizado(locatorBtnOrigenVuelos));
+        esperarXSegundos(2000);
         click(esperarPorElementoLocalizado(locatorGesel));
         click(esperarPorElementoLocalizado(locatorBtnDestinoVuelos));
         escribirTexto(esperarPorElementoLocalizado(locatorBtnDestinoVuelos), destino);
-        esperarXSegundos(10000);
-        //enter(esperarPorElementoLocalizado(locatorBtnDestinoVuelos));
+        esperarXSegundos(2000);
         click(esperarPorElementoLocalizado(locatorSeul));
         click(esperarPorElementoLocalizado(locatorBtnFechaIda));
         click(esperarPorElementoLocalizado(locatorBtnDiaIda));
         click(esperarPorElementoLocalizado(locatorBtnOrigenVuelos));
         click(esperarPorElementoLocalizado(locatorBtnDestinoVuelos));
         click(esperarPorElementoLocalizado(locatorBtnBuscar));
+    }
+
+    public String obtenerError(){
+        return obtenerTexto(esperarPorElementoLocalizado(locatorMensajeErrorVuelos));
     }
 }
