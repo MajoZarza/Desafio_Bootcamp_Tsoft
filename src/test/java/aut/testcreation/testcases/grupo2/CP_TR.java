@@ -6,6 +6,7 @@ import aut.testcreation.pages.grupo2.Vuelos;
 import framework.engine.selenium.DriverFactory;
 import framework.engine.selenium.SeleniumTestBase;
 import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.WebDriver;
@@ -37,12 +38,7 @@ public class CP_TR extends SeleniumTestBase {
     public void CP_TR_01() {
         trenes.reservaLargaError("Madrid", "Barcelona");
         homePage.esperarXSegundos(1000);
-
-
-
-        // comparar el mensaje con //span[@role='alert']
-        // Lo sentimos, no se pueden reservar más de 31 noches
-
+        Assertions.assertEquals(("Lo sentimos, no se pueden reservar más de 31 noches"), trenes.obtenerError());
     }
 
 

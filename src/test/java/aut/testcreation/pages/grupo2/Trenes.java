@@ -20,9 +20,9 @@ public class Trenes extends Rumbo_Base {
     By locatorMadrid = By.xpath("//input[@value='Madrid']");
     By locatorBtnFechaIda = By.xpath("//button[@aria-label='Fecha de ida']");
     By locatorBtnFechaVuelta = By.xpath("//button[@aria-label='Fecha de vuelta']");
-    By locatorBtnDiaIda = By.xpath("//button[contains(text(), '15')]");
+    By locatorBtnDiaIda = By.xpath("//form/div[2]/div[2]/div/div/div/div/section/div/div/div/div[2]/div[2]/button[15]");
 
-    By locatorBtnDiaVuelta = By.xpath("By.xpath(\"//form/div[2]/div[2]/div/div/div/div/section/div/div/div/div[3]/div[2]/button[30]\")");
+    By locatorBtnDiaVuelta = By.xpath("//form/div[2]/div[2]/div/div/div/div/section/div/div/div/div[3]/div[2]/button[30]");
 
     By locatorBtnDiaVueltaotro = By.xpath("//button[@class=\"d-1ktehkr\" and text()='25']");
 
@@ -41,8 +41,7 @@ public class Trenes extends Rumbo_Base {
     By locatorTelefono = By.xpath("//input[@name='phone']");
 
     By locatorSinProteccionAdicional = By.xpath("//div[@class='insurance__noThanks-expandable-left-box']");
-    //WebElement locatorError = driver.findElement(By.xpath("//span[@role='alert']"));
-    //String textoError = locatorError.getText();
+    By locatorMensajeError = By.xpath("//span[@role='alert']");
 
 
     public Trenes(WebDriver driver) {
@@ -99,8 +98,6 @@ public class Trenes extends Rumbo_Base {
         click(esperarPorElementoLocalizado(locatorBtnDiaIda));
         esperarXSegundos(2000);
         click(esperarPorElementoLocalizado(locatorBtnDiaVuelta));
-        esperarXSegundos(2000);
-        click(esperarPorElementoLocalizado(locatorBtnBuscar));
         esperarXSegundos(2000);
     }
 
@@ -170,6 +167,10 @@ public class Trenes extends Rumbo_Base {
 
     public void sinProteccionAdicional() {
         click(esperarPorElementoLocalizado(locatorSinProteccionAdicional));
+    }
+
+    public String obtenerError(){
+        return obtenerTexto(esperarPorElementoLocalizado(locatorMensajeError));
     }
 
 
