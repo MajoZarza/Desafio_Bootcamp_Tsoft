@@ -49,7 +49,7 @@ public class CP_TR extends SeleniumTestBase {
         homePage.esperarXSegundos(1000);
         trenes.buscarLupa();
         homePage.esperarXSegundos(5000);
-        trenes.seleccionarPrimerTren();
+        trenes.seleccionarPrimerTrenParaReserva();
         homePage.esperarXSegundos(3000);
         trenes.completarFormularioContactoTren("Dario", "Daro", "darioa@gmail.com", "198889997");
 

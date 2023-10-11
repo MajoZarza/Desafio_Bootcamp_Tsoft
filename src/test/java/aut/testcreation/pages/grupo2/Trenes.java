@@ -67,6 +67,8 @@ public class Trenes extends Rumbo_Base {
         click(locatorBtnBuscar);
     }
 
+
+
    /* public void entraraTrenes() {
         click(esperarPorElementoLocalizado(locatorBtnVerMas));
         esperarXSegundos(1000);
@@ -172,7 +174,11 @@ public class Trenes extends Rumbo_Base {
         return obtenerTexto(esperarPorElementoLocalizado(locatorMensajeErrorTrenes));
     }
 
+    public void seleccionarPrimerTrenParaReserva() {
 
+        click(esperarPorElementoLocalizado(locatorPrimerTren));
+        click(esperarPorElementoLocalizado(locatorSeleccionar));
+    }
 }
 
 
