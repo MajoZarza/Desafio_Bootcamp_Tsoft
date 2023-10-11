@@ -98,25 +98,30 @@ public class HomePage extends Rumbo_Base {
 
 
     public void busquedaVueloSoloIda(String origen, String destino)  {
-
-
         click(esperarPorElementoLocalizado(locatorBtnVuelos));
+        esperarXSegundos(2000);
         click(esperarPorElementoLocalizado(locatorBtnSoloIda));
+        esperarXSegundos(2000);
         click(esperarPorElementoLocalizado(locatorBtnOrigenVuelos));
+        esperarXSegundos(2000);
         escribirTexto(esperarPorElementoLocalizado(locatorBtnOrigenVuelos), origen);
-        esperarXSegundos(1000);
-        //enter(esperarPorElementoLocalizado(locatorBtnOrigenVuelos));
+        esperarXSegundos(2000);
         click(esperarPorElementoLocalizado(locatorMadrid));
+        esperarXSegundos(2000);
         click(esperarPorElementoLocalizado(locatorBtnDestinoVuelos));
+        esperarXSegundos(2000);
         escribirTexto(esperarPorElementoLocalizado(locatorBtnDestinoVuelos), destino);
-        esperarXSegundos(1000);
-        //enter(esperarPorElementoLocalizado(locatorBtnDestinoVuelos));
+        esperarXSegundos(2000);
         click(esperarPorElementoLocalizado(locatorBarcelona));
+        esperarXSegundos(2000);
         click(esperarPorElementoLocalizado(locatorBtnFechaIda));
+        esperarXSegundos(2000);
         click(esperarPorElementoLocalizado(locatorBtnDiaIda));
+        esperarXSegundos(2000);
         click(esperarPorElementoLocalizado(locatorBtnOrigenVuelos));
+        esperarXSegundos(2000);
         click(esperarPorElementoLocalizado(locatorBtnDestinoVuelos));
-        esperarXSegundos(1000);
+        esperarXSegundos(2000);
         click(esperarPorElementoLocalizado(locatorBtnBuscar));
     }
 
