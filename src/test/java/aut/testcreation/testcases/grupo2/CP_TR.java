@@ -65,7 +65,8 @@ public class CP_TR extends SeleniumTestBase {
     @Test
     //Error no se ingresa ciudad de destino - Busqueda Tren
     public void CP_TR_04() {
-
+        trenes.reservaErrorSinDestino("Madrid");
+        Assertions.assertEquals(("Selecciona ciudad de destino"), trenes.obtenerError());
     }
 
     @Test

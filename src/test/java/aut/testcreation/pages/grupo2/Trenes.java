@@ -159,6 +159,21 @@ public class Trenes extends Rumbo_Base {
         esperarXSegundos(2000);
         click(esperarPorElementoLocalizado(locatorBtnBuscar));
     }
+    public void reservaErrorSinDestino (String origen) {
+        click(esperarPorElementoLocalizado(locatorSoloIda));
+        esperarXSegundos(2000);
+        click(esperarPorElementoLocalizado(locatorBtnOrigenTrenes));
+        esperarXSegundos(2000);
+        escribirTexto(esperarPorElementoLocalizado(locatorBtnOrigenTrenes), origen);
+        esperarXSegundos(2000);
+        click(esperarPorElementoLocalizado(locatorMadrid));
+        esperarXSegundos(2000);
+        click(esperarPorElementoLocalizado(locatorBtnFechaIda));
+        esperarXSegundos(2000);
+        click(esperarPorElementoLocalizado(locatorBtnDiaIda));
+        esperarXSegundos(2000);
+        click(esperarPorElementoLocalizado(locatorBtnBuscar));
+    }
 
     public void seleccionarPrimerVuelo() {
 
