@@ -56,6 +56,9 @@ public class HomePage extends Rumbo_Base {
     By locatorSeul = By.xpath("//input[@value='Seúl (SEL)']");
     By locatorGesel = By.xpath("//input[@value='Villa Gesell (VLG)']");
     By locatorMensajeErrorVuelos = By.xpath("//div[contains(text(), 'No hemos encontrado ningún resultado con tus criterios de búsqueda.')]");
+    By locatorBtnClasesVuelo1 = By.xpath("//form/div/div[6]/div/div/div[2]/div/div[2]/section/div/div/div[2]");
+    By locatorBtnClasesVuelo2 = By.xpath("//form/div/div[6]/div/div/div[2]/div/div[2]/section/div/div/div[3]");
+    By locatorClasePrimera = By.xpath("//form/div/div[6]/div/div/div[2]/div/div[2]/section/div/div/div[2]/div/button[5]");
 
 
 
@@ -122,6 +125,39 @@ public class HomePage extends Rumbo_Base {
         click(esperarPorElementoLocalizado(locatorBtnFechaIda));
         esperarXSegundos(2000);
         click(esperarPorElementoLocalizado(locatorBtnDiaIda));
+        esperarXSegundos(2000);
+        click(esperarPorElementoLocalizado(locatorBtnOrigenVuelos));
+        esperarXSegundos(2000);
+        click(esperarPorElementoLocalizado(locatorBtnDestinoVuelos));
+        esperarXSegundos(2000);
+        click(esperarPorElementoLocalizado(locatorBtnBuscar));
+    }
+    public void busquedaVueloSoloIdaPrimera(String origen, String destino)  {
+        click(esperarPorElementoLocalizado(locatorBtnVuelos));
+        esperarXSegundos(2000);
+        click(esperarPorElementoLocalizado(locatorBtnSoloIda));
+        esperarXSegundos(2000);
+        click(esperarPorElementoLocalizado(locatorBtnOrigenVuelos));
+        esperarXSegundos(2000);
+        escribirTexto(esperarPorElementoLocalizado(locatorBtnOrigenVuelos), origen);
+        esperarXSegundos(2000);
+        click(esperarPorElementoLocalizado(locatorMadrid));
+        esperarXSegundos(2000);
+        click(esperarPorElementoLocalizado(locatorBtnDestinoVuelos));
+        esperarXSegundos(2000);
+        escribirTexto(esperarPorElementoLocalizado(locatorBtnDestinoVuelos), destino);
+        esperarXSegundos(2000);
+        click(esperarPorElementoLocalizado(locatorBarcelona));
+        esperarXSegundos(2000);
+        click(esperarPorElementoLocalizado(locatorBtnFechaIda));
+        esperarXSegundos(2000);
+        click(esperarPorElementoLocalizado(locatorBtnDiaIda));
+        esperarXSegundos(2000);
+        click(esperarPorElementoLocalizado(locatorBtnClasesVuelo1));
+        esperarXSegundos(2000);
+        click(esperarPorElementoLocalizado(locatorBtnClasesVuelo2));
+        esperarXSegundos(2000);
+        click(esperarPorElementoLocalizado(locatorClasePrimera));
         esperarXSegundos(2000);
         click(esperarPorElementoLocalizado(locatorBtnOrigenVuelos));
         esperarXSegundos(2000);

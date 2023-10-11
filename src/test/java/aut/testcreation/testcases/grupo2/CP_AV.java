@@ -79,7 +79,7 @@ public class CP_AV extends SeleniumTestBase {
         homePage.busquedaVueloSoloIdaMaestro("Madrid (MAD)", "Barcelona (BCN)");
         homePage.esperarXSegundos(10000);
         vuelos.seleccionarPrimerVuelo();
-        vuelos.tarifaFlex();
+        vuelos.tarifaClassic();
         vuelos.completarFormularioContacto("Dario", "Daro", "darioa@gmail.com", "198889997");
         vuelos.completarFormularioDireccion("Gran via", "10", "28006", "Madrid");
         vuelos.completarFormularioPasajero("15", "Enero", "1991");
@@ -89,11 +89,14 @@ public class CP_AV extends SeleniumTestBase {
     @Test
     //Busqueda Vuelo - Ida y vuelta - con opción Primera Clase
     public void CP_AV_06() {
-        homePage.busquedaVueloSoloIda("Madrid (MAD)", "Barcelona (BCN)");
+        homePage.busquedaVueloSoloIdaPrimera("Madrid (MAD)", "Barcelona (BCN)");
         homePage.esperarXSegundos(10000);
-        vuelos.flechaparacambiarop();
-        homePage.esperarXSegundos(3000);
-
+        vuelos.seleccionarPrimerVuelo();
+        vuelos.tarifaClassic();
+        vuelos.completarFormularioContacto("Dario", "Daro", "darioa@gmail.com", "198889997");
+        vuelos.completarFormularioDireccion("Gran via", "10", "28006", "Madrid");
+        vuelos.completarFormularioPasajero("15", "Enero", "1991");
+        vuelos.equipajeFacturado();
     }
 
   @AfterEach
