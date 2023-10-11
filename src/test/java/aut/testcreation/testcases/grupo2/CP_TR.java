@@ -5,13 +5,11 @@ import aut.testcreation.pages.grupo2.Trenes;
 import aut.testcreation.pages.grupo2.Vuelos;
 import framework.engine.selenium.DriverFactory;
 import framework.engine.selenium.SeleniumTestBase;
-import framework.engine.utils.grupo2.Rumbo_Base;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.WebDriver;
 
-import javax.xml.datatype.DatatypeFactory;
 
 
 public class CP_TR extends SeleniumTestBase {
