@@ -72,6 +72,7 @@ public class Trenes extends Rumbo_Base {
 
     By locatorSiguiente = By.xpath("//button[@data-test='lead-generation-submit-btn'][text()='Siguiente']");
 
+    By locatorErrorDNI = By.xpath("//span[contains(text(), 'Introduce nº de documento')]");
 
     public Trenes(WebDriver driver) {
         super(driver);
@@ -349,6 +350,11 @@ public class Trenes extends Rumbo_Base {
         Thread.sleep(2000);
         escribirTexto(esperarPorElementoLocalizado(locatorNumeroDNI), dni);
         Thread.sleep(2000);
+    }
+
+
+    public String obtenerErrorDNI(){
+        return obtenerTexto(esperarPorElementoLocalizado(locatorErrorDNI));
     }
 
 }

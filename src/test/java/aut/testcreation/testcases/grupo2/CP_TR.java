@@ -104,15 +104,14 @@ public class CP_TR extends SeleniumTestBase {
         trenes.seleccionarPrimerVuelo();
         homePage.esperarXSegundos(5000);
         //le agrege espera al general
-        vuelos.completarFormularioContacto("Dario", "Daro", "darioa@gmail.com", "198889997");
+        trenes.completarFormularioContactoTren("Dario", "Daro", "darioa@gmail.com", "198889997");
         homePage.esperarXSegundos(3000);
         //le agrege espera al general
-        vuelos.completarFormularioPasajero("15", "Enero", "1991");
-        trenes.agregarDNI22("451");
+        trenes.completarFormularioPasajero("15", "Enero", "1991");
         homePage.esperarXSegundos(2000);
-        //trenes.sinProteccionAdicional();
-        // homePage.esperarXSegundos(3000);
-        //trenes.BtnSiguiente();
+        trenes.BtnSiguiente();
+        Assertions.assertEquals("Introduce nº de documento", trenes.obtenerErrorDNI());
+
     }
 
 
