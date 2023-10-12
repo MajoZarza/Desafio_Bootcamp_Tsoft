@@ -88,9 +88,11 @@ public class CP_TR extends SeleniumTestBase {
     //Reserva Tren - Solo ida - eligiendo opción el más rápido
     public void CP_TR_05() {
         trenes.reservaSoloIda("Madrid", "Barcelona");
-        homePage.esperarXSegundos(5000);
+        homePage.esperarXSegundos(2000);
+        trenes.elMasRapido();
+        homePage.esperarXSegundos(2000);
         trenes.seleccionarPrimerVuelo();
-        homePage.esperarXSegundos(10000);
+        homePage.esperarXSegundos(2000);
         vuelos.completarFormularioContacto("Dario", "Daro", "darioa@gmail.com", "198889997");
         vuelos.completarFormularioDireccion("Gran via", "10", "28006", "Madrid");
         vuelos.completarFormularioPasajero("15", "Enero", "1991");
