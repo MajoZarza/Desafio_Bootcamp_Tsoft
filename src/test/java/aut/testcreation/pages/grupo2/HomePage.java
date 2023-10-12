@@ -144,6 +144,7 @@ public class HomePage extends Rumbo_Base {
         click(esperarPorElementoLocalizado(locatorBtnBuscar));
     }
 
+
     public void irATrenes() {
         click(esperarPorElementoLocalizado(locatorBtnVerMas));
         click(esperarPorElementoLocalizado(locatorBtnTrenes));

@@ -42,7 +42,7 @@ public class CP_AV extends SeleniumTestBase {
     }
 
     @Test
-    public void CP_AV_03()  {
+    public void CP_AV_03() throws InterruptedException {
         homePage.busquedaVueloSoloIda("Madrid (MAD)", "Barcelona (BCN)");
         homePage.esperarXSegundos(10000);
         vuelos.seleccionarPrimerVuelo();
@@ -64,11 +64,18 @@ public class CP_AV extends SeleniumTestBase {
         vuelos.equipajeFacturado();
     }
 
+
+
+    //-----------MARIAN-------------------------------
     @Test
     //Busqueda Vuelo - Solo ida - con opción Tarjeta Maestro
-    public void CP_AV_05() {
-
+    public void CP_AV_05() throws InterruptedException {
+        vuelos.pagaMaestro("Madrid (MAD)", "Barcelona (BCN)");
+        homePage.esperarXSegundos(2000);
+        vuelos.buscarLupa();
     }
+
+
 
     @Test
     //Busqueda Vuelo - Ida y vuelta - con opción Primera Clase
