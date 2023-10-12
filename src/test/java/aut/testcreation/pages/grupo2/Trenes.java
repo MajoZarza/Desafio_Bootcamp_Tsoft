@@ -71,6 +71,7 @@ public class Trenes extends Rumbo_Base {
     By locatorAnioNacimientoPasajeroTren2 = By.xpath("//*[@id=\"root\"]/div/div[2]/div/div/div[2]/div[5]/form/section[2]/div[4]/div[2]/div[3]/label/span/input");
 
     By locatorSiguiente = By.xpath("//button[@data-test='lead-generation-submit-btn'][text()='Siguiente']");
+    By locatorElMasRapido = By.xpath("//div[9]/Div/ul/li[3]");
 
 
     public Trenes(WebDriver driver) {
@@ -309,11 +310,6 @@ public class Trenes extends Rumbo_Base {
         esperarXSegundos(3000);
     }
 
-
-    //-----------MARIAN-------------------------------
-
-
-
     By locatorBtnSoloIda = By.xpath("//div[@class='d-1nwmwhy']");
     By locatorCantidadPasajeros = By.xpath("//div[label[text()='Pasajero']]//button[contains(span, '2 pasajeros')]");
     By locatorReducirUnPasajero = By.xpath("//button[@aria-label='Reducir el número de adultos']");
@@ -349,6 +345,10 @@ public class Trenes extends Rumbo_Base {
         Thread.sleep(2000);
         escribirTexto(esperarPorElementoLocalizado(locatorNumeroDNI), dni);
         Thread.sleep(2000);
+    }
+
+    public void elMasRapido () {
+        click(esperarPorElementoLocalizado(locatorElMasRapido));
     }
 
 }
