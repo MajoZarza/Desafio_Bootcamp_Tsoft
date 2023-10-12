@@ -6,6 +6,7 @@ import aut.testcreation.pages.grupo2.Vuelos;
 import framework.engine.selenium.DriverFactory;
 import framework.engine.selenium.SeleniumTestBase;
 import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.WebDriver;
@@ -37,12 +38,7 @@ public class CP_TR extends SeleniumTestBase {
     public void CP_TR_01() {
         trenes.reservaLargaError("Madrid", "Barcelona");
         homePage.esperarXSegundos(1000);
-
-
-
-        // comparar el mensaje con //span[@role='alert']
-        // Lo sentimos, no se pueden reservar más de 31 noches
-
+        Assertions.assertEquals(("Lo sentimos, no se pueden reservar más de 31 noches"), trenes.obtenerError());
     }
 
 
@@ -50,12 +46,21 @@ public class CP_TR extends SeleniumTestBase {
     //Reserva Tren - Ida y vuelta
     public void CP_TR_02() {
         trenes.reservaTren("Madrid", "Barcelona");
-        homePage.esperarXSegundos(1000);
+        homePage.esperarXSegundos(5000);
         trenes.buscarLupa();
         homePage.esperarXSegundos(5000);
-        trenes.seleccionarPrimerTren();
+        trenes.seleccionarPrimerTrenParaReserva();
         homePage.esperarXSegundos(3000);
         trenes.completarFormularioContactoTren("Dario", "Daro", "darioa@gmail.com", "198889997");
+        trenes.completarFormularioPasajero("15", "Enero", "1991");
+        trenes.agregarDNI("1115555");
+        homePage.esperarXSegundos(3000);
+        trenes.completarFormularioContactoTren2("Daria", "Daro");
+        homePage.esperarXSegundos(2000);
+        trenes.completarFormularioPasajero2("15", "Febrero", "1992");
+        trenes.agregarDNI2("1115556");
+        trenes.BtnSiguiente();
+        homePage.esperarXSegundos(2000);
 
 
     }
@@ -63,18 +68,25 @@ public class CP_TR extends SeleniumTestBase {
     @Test
     //Error por querer ingresar email inválido  - Reserva Tren
     public void CP_TR_03() {
-
+        trenes.reservaSoloIda("Madrid", "Barcelona");
+        homePage.esperarXSegundos(2000);
+        trenes.seleccionarPrimerVuelo();
+        homePage.esperarXSegundos(2000);
+        vuelos.completarFormularioContacto("Dario", "Daro", "darioa@@gmail.com", "198889997");
+        homePage.esperarXSegundos(2000);
+        Assertions.assertEquals(("Introduce un email válido"), trenes.obtenerErrorEmail());
     }
 
     @Test
     //Error no se ingresa ciudad de destino - Busqueda Tren
     public void CP_TR_04() {
-
+        trenes.reservaErrorSinDestino("Madrid");
+        Assertions.assertEquals(("Selecciona ciudad de destino"), trenes.obtenerError());
     }
 
     @Test
     //Reserva Tren - Solo ida - eligiendo opción el más rápido
-    public void CP_TR_05() throws InterruptedException {
+    public void CP_TR_05() {
         trenes.reservaSoloIda("Madrid", "Barcelona");
         homePage.esperarXSegundos(5000);
         trenes.seleccionarPrimerVuelo();
@@ -88,28 +100,27 @@ public class CP_TR extends SeleniumTestBase {
 
     @Test
     public void CP_TR_06() throws InterruptedException {
-        trenes.inicioFaltaDNI("Madrid", "Barcelona");
+        trenes.inicioFaltaDNI2("Madrid", "Barcelona");
         trenes.seleccionarPrimerVuelo();
         homePage.esperarXSegundos(5000);
         //le agrege espera al general
         vuelos.completarFormularioContacto("Dario", "Daro", "darioa@gmail.com", "198889997");
         homePage.esperarXSegundos(3000);
         //le agrege espera al general
-        trenes.completarFormularioPasajeroTren("15", "Enero", "1999");
-        trenes.agregarDNI("451");
+        vuelos.completarFormularioPasajero("15", "Enero", "1991");
+        trenes.agregarDNI22("451");
         homePage.esperarXSegundos(2000);
         //trenes.sinProteccionAdicional();
-       // homePage.esperarXSegundos(3000);
+        // homePage.esperarXSegundos(3000);
         //trenes.BtnSiguiente();
     }
+
 
     @AfterEach
 
     public void afterTests (){ homePage.cerrarBrowser(); }
 
 
+
+
 }
-
-
-
-

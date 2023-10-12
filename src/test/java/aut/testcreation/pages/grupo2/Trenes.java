@@ -1,3 +1,4 @@
+
 package aut.testcreation.pages.grupo2;
 
 import framework.engine.utils.grupo2.Rumbo_Base;
@@ -19,9 +20,9 @@ public class Trenes extends Rumbo_Base {
     By locatorMadrid = By.xpath("//input[@value='Madrid']");
     By locatorBtnFechaIda = By.xpath("//button[@aria-label='Fecha de ida']");
     By locatorBtnFechaVuelta = By.xpath("//button[@aria-label='Fecha de vuelta']");
-    By locatorBtnDiaIda = By.xpath("//button[contains(text(), '15')]");
+    By locatorBtnDiaIda = By.xpath("//form/div[2]/div[2]/div/div/div/div/section/div/div/div/div[2]/div[2]/button[15]");
 
-    By locatorBtnDiaVuelta = By.xpath("By.xpath(\"//form/div[2]/div[2]/div/div/div/div/section/div/div/div/div[3]/div[2]/button[30]\")");
+    By locatorBtnDiaVuelta = By.xpath("//form/div[2]/div[2]/div/div/div/div/section/div/div/div/div[3]/div[2]/button[30]");
 
     By locatorBtnDiaVueltaotro = By.xpath("//button[@class=\"d-1ktehkr\" and text()='25']");
 
@@ -40,10 +41,36 @@ public class Trenes extends Rumbo_Base {
     By locatorTelefono = By.xpath("//input[@name='phone']");
 
     By locatorSinProteccionAdicional = By.xpath("//div[@class='insurance__noThanks-expandable-left-box']");
-    //WebElement locatorError = driver.findElement(By.xpath("//span[@role='alert']"));
-    //String textoError = locatorError.getText();
+    By locatorMensajeErrorTrenes = By.xpath("//span[@role='alert']");
+    By locatorMensajeErrorEmail = By.xpath("//span[contains(text(), 'Introduce un email válido')]");
+
+    By locatorChecks = By.xpath("//span[@class='check']");
+    By locatorGeneroMasculino = By.xpath("//span[@class='radio-groups.1.travellers.1.title-MALE']");
+    By locatorDiaNacimientoPasajeroTren = By.xpath("//*[@id=\"root\"]/div/div[2]/div/div/div[2]/div[5]/form/section[1]/div[4]/div[2]/div[1]/label/span/input");
+    By locatorMesNacimientoPasajeroTren = By.xpath("//span[contains(text(), 'Mes')]");
+    By locatorEneroTren = By.xpath("//span[contains(text(), 'enero')]");
+
+    By locatorFebreroTren = By.xpath("//span[contains(text(), 'febrero')]");
+    By locatorAnioNacimientoPasajeroTren = By.xpath("//*[@id=\"root\"]/div/div[2]/div/div/div[2]/div[5]/form/section[1]/div[4]/div[2]/div[3]/label/span/input");
+
+    By locatorTipoDocumento = By.xpath("//button[.//span[text()='Tipo de documento']]");
+    By locatorSeleccionDNI = By.xpath("//li[.//span[text()='Pasaporte']]");
+    By locatorClicNumeroDNI = By.xpath("//*[@id=\"root\"]/div/div[2]/div/div/div[2]/div[5]/form/section/section/div/div[2]/div/label");
+    By locatorNumeroDNI = By.xpath("//*[@id=\"root\"]/div/div[2]/div/div/div[2]/div[5]/form/section/section/div/div[2]/div/label/span[1]/input");
+    By locatorTipoDocumento2 = By.xpath("//*[@id=\"root\"]/div/div[2]/div/div/div[2]/div[5]/form/section[2]/section/div/div[1]/div/button");
+
+    //By locatorClicNumeroDNI2 = By.xpath("");
+    By locatorNumeroDNI2 = By.xpath("//input[@name='groups.1.travellers.2.documentNumber']");
 
 
+    By locatorChecks2 = By.xpath("//*[@id=\"radio-groups.1.travellers.2.title-FEMALE-label\"]/span[1]/span[2]");
+    By locatorNombreContactoTren2 = By.xpath("//*[@id=\"root\"]/div/div[2]/div/div/div[2]/div[5]/form/section[2]/div[2]/div/label/span/input");
+    By locatorApellidoContactoTren2 = By.xpath("//*[@id=\"root\"]/div/div[2]/div/div/div[2]/div[5]/form/section[2]/div[3]/div/label/span[1]/input");
+    By locatorMesNacimientoPasajeroTren2 = By.xpath("//*[@id=\"root\"]/div/div[2]/div/div/div[2]/div[5]/form/section[2]/div[4]/div[2]/div[2]/button");
+    By locatorDiaNacimientoPasajeroTren2 = By.xpath("//*[@id=\"root\"]/div/div[2]/div/div/div[2]/div[5]/form/section[2]/div[4]/div[2]/div[1]/label/span/input");
+    By locatorAnioNacimientoPasajeroTren2 = By.xpath("//*[@id=\"root\"]/div/div[2]/div/div/div[2]/div[5]/form/section[2]/div[4]/div[2]/div[3]/label/span/input");
+
+    By locatorSiguiente = By.xpath("//button[@data-test='lead-generation-submit-btn'][text()='Siguiente']");
 
 
     public Trenes(WebDriver driver) {
@@ -68,6 +95,8 @@ public class Trenes extends Rumbo_Base {
     public void buscarLupa() {
         click(locatorBtnBuscar);
     }
+
+
 
    /* public void entraraTrenes() {
         click(esperarPorElementoLocalizado(locatorBtnVerMas));
@@ -100,8 +129,6 @@ public class Trenes extends Rumbo_Base {
         click(esperarPorElementoLocalizado(locatorBtnDiaIda));
         esperarXSegundos(2000);
         click(esperarPorElementoLocalizado(locatorBtnDiaVuelta));
-        esperarXSegundos(2000);
-        click(esperarPorElementoLocalizado(locatorBtnBuscar));
         esperarXSegundos(2000);
     }
 
@@ -138,7 +165,6 @@ public class Trenes extends Rumbo_Base {
         click(esperarPorElementoLocalizado(locatorBtnDiaVuelta));
         esperarXSegundos(2000);
         click(esperarPorElementoLocalizado(locatorBtnBuscar));
-        //Assert.assertEquals("Lo sentimos, no se pueden reservar más de 31 noches", textoError);
     }
 
     public void reservaSoloIda(String origen, String destino) {
@@ -163,6 +189,22 @@ public class Trenes extends Rumbo_Base {
         click(esperarPorElementoLocalizado(locatorBtnBuscar));
     }
 
+    public void reservaErrorSinDestino(String origen) {
+        click(esperarPorElementoLocalizado(locatorSoloIda));
+        esperarXSegundos(2000);
+        click(esperarPorElementoLocalizado(locatorBtnOrigenTrenes));
+        esperarXSegundos(2000);
+        escribirTexto(esperarPorElementoLocalizado(locatorBtnOrigenTrenes), origen);
+        esperarXSegundos(2000);
+        click(esperarPorElementoLocalizado(locatorMadrid));
+        esperarXSegundos(2000);
+        click(esperarPorElementoLocalizado(locatorBtnFechaIda));
+        esperarXSegundos(2000);
+        click(esperarPorElementoLocalizado(locatorBtnDiaIda));
+        esperarXSegundos(2000);
+        click(esperarPorElementoLocalizado(locatorBtnBuscar));
+    }
+
     public void seleccionarPrimerVuelo() {
 
         click(esperarPorElementoLocalizado(locatorPrimerTren));
@@ -173,22 +215,109 @@ public class Trenes extends Rumbo_Base {
         click(esperarPorElementoLocalizado(locatorSinProteccionAdicional));
     }
 
+    public String obtenerError() {
+        return obtenerTexto(esperarPorElementoLocalizado(locatorMensajeErrorTrenes));
+    }
+
+    public String obtenerErrorEmail() {
+        return obtenerTexto(esperarPorElementoLocalizado(locatorMensajeErrorEmail));
+    }
+
+    public void seleccionarPrimerTrenParaReserva() {
+
+        click(esperarPorElementoLocalizado(locatorPrimerTren));
+        click(esperarPorElementoLocalizado(locatorSeleccionar));
+    }
+
+    public void completarFormularioPasajero(String dia, String mes, String anio) {
+        click(esperarPorElementoLocalizado(locatorChecks));
+        //click(esperarPorElementoLocalizado(locatorGeneroMasculino));
+        scrollByLocator(locatorDiaNacimientoPasajeroTren);
+        esperarXSegundos(1000);
+        escribirTexto(esperarPorElementoLocalizado(locatorDiaNacimientoPasajeroTren), dia);
+        click(esperarPorElementoLocalizado(locatorMesNacimientoPasajeroTren));
+        esperarXSegundos(3000);
+        //escribirTexto(esperarPorElementoLocalizado(locatorMesNacimientoPasajeroTren), mes);
+        //esperarXSegundos(1000);
+        scrollByLocator(locatorEneroTren);
+        esperarXSegundos(1000);
+        click(locatorEneroTren);
+        esperarXSegundos(1000);
+        scrollByLocator(locatorAnioNacimientoPasajeroTren);
+        esperarXSegundos(1000);
+        escribirTexto(esperarPorElementoLocalizado(locatorAnioNacimientoPasajeroTren), anio);
+        esperarXSegundos(1000);
+
+    }
+
+    public void agregarDNI(String dni) {
+        click(esperarPorElementoLocalizado(locatorTipoDocumento));
+        esperarXSegundos(1000);
+        click(esperarPorElementoLocalizado(locatorSeleccionDNI));
+        esperarXSegundos(2000);
+        click(esperarPorElementoLocalizado(locatorClicNumeroDNI));
+        esperarXSegundos(2000);
+        escribirTexto(esperarPorElementoLocalizado(locatorNumeroDNI), dni);
+        esperarXSegundos(2000);
+    }
+
+    public void completarFormularioContactoTren2(String nombre, String apellido) {
+        scrollByLocator(locatorChecks2);
+        click(esperarPorElementoLocalizado(locatorChecks2));
+        click(esperarPorElementoLocalizado(locatorNombreContactoTren2));
+        escribirTexto(esperarPorElementoLocalizado(locatorNombreContactoTren2), nombre);
+        click(esperarPorElementoLocalizado(locatorApellidoContactoTren2));
+        escribirTexto(esperarPorElementoLocalizado(locatorApellidoContactoTren2), apellido);
+
+
+    }
+
+    public void completarFormularioPasajero2(String dia, String mes, String anio) {
+
+        //click(esperarPorElementoLocalizado(locatorGeneroMasculino));
+        scrollByLocator(locatorDiaNacimientoPasajeroTren2);
+        esperarXSegundos(1000);
+        escribirTexto(esperarPorElementoLocalizado(locatorDiaNacimientoPasajeroTren2), dia);
+        click(esperarPorElementoLocalizado(locatorMesNacimientoPasajeroTren2));
+        esperarXSegundos(3000);
+        escribirTexto(esperarPorElementoLocalizado(locatorMesNacimientoPasajeroTren2), mes);
+        esperarXSegundos(1000);
+        scrollByLocator(locatorFebreroTren);
+        esperarXSegundos(1000);
+        click(locatorFebreroTren);
+        esperarXSegundos(1000);
+        scrollByLocator(locatorAnioNacimientoPasajeroTren2);
+        esperarXSegundos(1000);
+        escribirTexto(esperarPorElementoLocalizado(locatorAnioNacimientoPasajeroTren2), anio);
+        esperarXSegundos(1000);
+
+    }
+
+    public void agregarDNI2(String dni) {
+        click(esperarPorElementoLocalizado(locatorTipoDocumento2));
+        esperarXSegundos(1000);
+        click(esperarPorElementoLocalizado(locatorSeleccionDNI));
+        esperarXSegundos(2000);
+        //click(esperarPorElementoLocalizado(locatorClicNumeroDNI2));
+        esperarXSegundos(2000);
+        escribirTexto(esperarPorElementoLocalizado(locatorNumeroDNI2), dni);
+        esperarXSegundos(2000);
+    }
+
+    public void BtnSiguiente() {
+        click(esperarPorElementoLocalizado(locatorSiguiente));
+        esperarXSegundos(3000);
+    }
+
 
     //-----------MARIAN-------------------------------
+
+
+
     By locatorBtnSoloIda = By.xpath("//div[@class='d-1nwmwhy']");
-    By locatorTipoDocumento = By.xpath("//button[.//span[text()='Tipo de documento']]");
-    By locatorSeleccionDNI = By.xpath("//li[.//span[text()='DNI']]");
-    By locatorClicNumeroDNI = By.xpath("//*[@id=\"root\"]/div/div[2]/div/div/div[2]/div[5]/form/section/section/div/div[2]/div/label");
-    By locatorNumeroDNI = By.xpath("//*[@id=\"root\"]/div/div[2]/div/div/div[2]/div[5]/form/section/section/div/div[2]/div/label/span[1]/input");
-
-
-    By locatorDNI = By.xpath("//input[@name='groups.1.travellers.2.documentNumber']");
-
-
     By locatorCantidadPasajeros = By.xpath("//div[label[text()='Pasajero']]//button[contains(span, '2 pasajeros')]");
     By locatorReducirUnPasajero = By.xpath("//button[@aria-label='Reducir el número de adultos']");
-
-    public void inicioFaltaDNI(String origen, String destino) throws InterruptedException {
+    public void inicioFaltaDNI2 (String origen, String destino) throws InterruptedException {
         click(esperarPorElementoLocalizado(locatorBtnOrigenTrenes));
         Thread.sleep(2000);
         click(esperarPorElementoLocalizado(locatorBtnSoloIda));
@@ -211,7 +340,7 @@ public class Trenes extends Rumbo_Base {
         Thread.sleep(10000);
     }
 
-    public void agregarDNI (String dni) throws InterruptedException {
+    public void agregarDNI22 (String dni) throws InterruptedException {
         click(esperarPorElementoLocalizado(locatorTipoDocumento));
         Thread.sleep(2000);
         click(esperarPorElementoLocalizado(locatorSeleccionDNI));
@@ -220,36 +349,6 @@ public class Trenes extends Rumbo_Base {
         Thread.sleep(2000);
         escribirTexto(esperarPorElementoLocalizado(locatorNumeroDNI), dni);
         Thread.sleep(2000);
-    }
-
-    By locatorChecksTren = By.xpath("//*[@id=\"radio-groups.1.travellers.1.title-MALE-label\"]");
-    By locatorDiaNacimientoPasajeroTren = By.xpath("//input[@data-testid='input-input' and @name='groups.1.travellers.1.dateOfBirth']");
-    By locatorMesNacimientoPasajeroTren = By.xpath("//button[@data-testid='groups.1.travellers.1.dateOfBirth_month' and .//span[@data-testid='select-label-text' and text()='Mes']]");
-    By locatorEneroTren = By.xpath("//span[text()='enero']");
-    By locatorAnioNacimientoPasajeroTren = By.xpath("//div[@data-testid=\"groups.1.travellers.1.dateOfBirth_year\"]");
-    By locatorIngresarAnioNacimiento = By.xpath("//*[@id=\"root\"]/div/div[2]/div/div/div[2]/div[5]/form/section/div[4]/div[2]/div[3]/label/span/input");
-
-    By locatorBtnSiguiente = By.xpath("//button[@data-test='lead-generation-submit-btn'][text()='Siguiente']");
-
-
-    public void BtnSiguiente() throws InterruptedException {
-        click(esperarPorElementoLocalizado(locatorBtnSiguiente));
-        Thread.sleep(3000);
-    }
-
-    public void completarFormularioPasajeroTren(String dia, String mes, String anio) throws InterruptedException {
-        click(esperarPorElementoLocalizado(locatorChecksTren));
-        Thread.sleep(3000);
-        escribirTexto(esperarPorElementoLocalizado(locatorDiaNacimientoPasajeroTren), dia);
-        click(esperarPorElementoLocalizado(locatorMesNacimientoPasajeroTren));
-        Thread.sleep(1000);
-        escribirTexto(esperarPorElementoLocalizado(locatorMesNacimientoPasajeroTren), mes);
-        click(esperarPorElementoLocalizado(locatorEneroTren));
-        Thread.sleep(1000);
-        click(esperarPorElementoLocalizado(locatorAnioNacimientoPasajeroTren));
-        Thread.sleep(1000);
-        escribirTexto(esperarPorElementoLocalizado(locatorIngresarAnioNacimiento), anio);
-        Thread.sleep(1000);
     }
 
 }
