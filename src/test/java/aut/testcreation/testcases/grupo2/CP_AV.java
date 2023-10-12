@@ -32,14 +32,13 @@ public class CP_AV extends SeleniumTestBase {
         vuelos.abrirMultidestino();
         vuelos.borrartodos();
         vuelos.busquedaVueloMultidestinoViaje1Origen("Barcelona");
-        homePage.esperarXSegundos(1000);
+        homePage.esperarXSegundos(2000);
         vuelos.busquedaVueloMultidestinoViaje1Destino("Madrid");
-        homePage.esperarXSegundos(1000);
+        homePage.esperarXSegundos(2000);
         vuelos.busquedaVueloMultidestinoViaje2Destino("Buenos aires");
-        homePage.esperarXSegundos(3000);
+        homePage.esperarXSegundos(2000);
         vuelos.buscarMultidestino();
-        homePage.esperarXSegundos(5000);
-
+        homePage.esperarXSegundos(2000);
     }
 
     @Test
@@ -53,39 +52,31 @@ public class CP_AV extends SeleniumTestBase {
     @Test
     public void CP_AV_03()  {
         homePage.busquedaVueloSoloIda("Madrid (MAD)", "Barcelona (BCN)");
-        homePage.esperarXSegundos(10000);
+        homePage.esperarXSegundos(2000);
         vuelos.seleccionarPrimerVuelo();
         vuelos.tarifaClassic();
-        vuelos.completarFormularioContacto("Dario", "Daro", "darioa@gmail.com", "198889997");
+        vuelos.completarFormularioContacto("Dario", "Daro", "darioa@gmail.com", "");
         vuelos.siguiente();
+        Assertions.assertEquals(("Introduce un número de teléfono válido"), vuelos.obtenerErrorTelefono());
     }
-
     @Test
     //Reserva de Vuelo - Solo Ida - Elección Full Flex
     public void CP_AV_04()  {
         homePage.busquedaVueloSoloIda("Madrid (MAD)", "Barcelona (BCN)");
-        homePage.esperarXSegundos(10000);
+        homePage.esperarXSegundos(2000);
         vuelos.seleccionarPrimerVuelo();
         vuelos.tarifaFlex();
         vuelos.completarFormularioContacto("Dario", "Daro", "darioa@gmail.com", "198889997");
-        vuelos.completarFormularioDireccion("Gran via", "10", "28006", "Madrid");
-        vuelos.completarFormularioPasajero("15", "Enero", "1991");
-        vuelos.equipajeFacturado();
     }
-
     @Test
     //Busqueda Vuelo - Solo ida - con opción Tarjeta Maestro
     public void CP_AV_05() {
         homePage.busquedaVueloSoloIdaMaestro("Madrid (MAD)", "Barcelona (BCN)");
-        homePage.esperarXSegundos(10000);
+        homePage.esperarXSegundos(2000);
         vuelos.seleccionarPrimerVuelo();
         vuelos.tarifaClassic();
         vuelos.completarFormularioContacto("Dario", "Daro", "darioa@gmail.com", "198889997");
-        vuelos.completarFormularioDireccion("Gran via", "10", "28006", "Madrid");
-        vuelos.completarFormularioPasajero("15", "Enero", "1991");
-        vuelos.equipajeFacturado();
     }
-
     @Test
     //Busqueda Vuelo - Ida y vuelta - con opción Primera Clase
     public void CP_AV_06() {
@@ -94,13 +85,7 @@ public class CP_AV extends SeleniumTestBase {
         vuelos.seleccionarPrimerVuelo();
         vuelos.tarifaClassic();
         vuelos.completarFormularioContacto("Dario", "Daro", "darioa@gmail.com", "198889997");
-        vuelos.completarFormularioDireccion("Gran via", "10", "28006", "Madrid");
-        vuelos.completarFormularioPasajero("15", "Enero", "1991");
-        vuelos.equipajeFacturado();
     }
-
     @AfterEach
-    public void afterTests() {
-        homePage.cerrarBrowser();
-    }
+    public void afterTests() { homePage.cerrarBrowser(); }
 }

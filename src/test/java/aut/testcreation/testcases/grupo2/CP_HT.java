@@ -33,7 +33,6 @@ public class CP_HT extends SeleniumTestBase {
         homePage.maximizar();
         homePage.cerrarCookies();
     }
-
     @Test
     //Reserva de Hotel - Añadir habitación
     public void CP_HT_01() throws InterruptedException {
@@ -47,8 +46,6 @@ public class CP_HT extends SeleniumTestBase {
         hoteles.buscarLupa();
         Thread.sleep(2000);
     }
-
-
     @Test
     //Reserva de Hotel - Filtrar precios
     public void CP_HT_02() throws InterruptedException {
@@ -59,9 +56,8 @@ public class CP_HT extends SeleniumTestBase {
         hoteles.buscarLupa();
         Thread.sleep(2000);
         hoteles.aplicarRangoPrecio();
-        Thread.sleep(5000);
+        Thread.sleep(2000);
     }
-
     @Test
     public void CP_HT_03() throws InterruptedException {
         Thread.sleep(3000);
@@ -79,12 +75,9 @@ public class CP_HT extends SeleniumTestBase {
         Thread.sleep(3000);
         hoteles.buscarLupa();
     }
-
-
     @Test
-//Error por fecha límite en el calendario - Reserva de hotel
+    //Error por fecha límite en el calendario - Reserva de hotel
     public void CP_HT_04() throws InterruptedException {
-
         homePage.hoteles();
         Thread.sleep(3000);
         hoteles.completarDestino();
@@ -94,12 +87,9 @@ public class CP_HT extends SeleniumTestBase {
         hoteles.buscarLupa();
         Thread.sleep(3000);
     }
-
     @Test
-
-//Error falta de ingreso de un campo obligatorio - Reserva para otra persona habitación de hotel
+    //Error falta de ingreso de un campo obligatorio - Reserva para otra persona habitación de hotel
     public void CP_HT_05() throws InterruptedException {
-
         Thread.sleep(3000);
         homePage.hoteles();
         Thread.sleep(3000);
@@ -138,7 +128,6 @@ public class CP_HT extends SeleniumTestBase {
         hoteles.filtrar();
         Thread.sleep(2000);
     }
-
     @AfterEach
     public void afterTests() {
         homePage.cerrarBrowser();

@@ -31,7 +31,7 @@ public class Hoteles extends Rumbo_Base {
     By locatorBtnSumarHabitacion = By.xpath("//*[@id=\"hub-csw-container\"]/div/div[2]/div/form/div/div[2]/div[1]/div/div[2]/div/div/section/div/section/div/button");
     By locatorFiltroPrecio = By.xpath("//div[@id='Pill-PriceContainer' and contains(text(), 'Precio')]");
     By locatorPrecioMax1000 = By.xpath("//div[@class='sc-fXSgeo kAKPXQ oss-ui-slider-bar']//div[@class='sc-JrDLc cZjmvO oss-ui-slider-bar-size']");
-    By locatorBtnAplicarPrecio = By.xpath("//div[contains(@class, 'sc-edKZPI') and contains(text(), 'Aplicar')]");
+    By locatorBtnAplicarPrecio = By.xpath("//div[contains(text(), 'Aplicar')]");
 
 
     public Hoteles(WebDriver driver) {
@@ -71,7 +71,7 @@ public class Hoteles extends Rumbo_Base {
         click(esperarPorElementoLocalizado(locatorFiltroPrecio));
         Thread.sleep(2000);
         click(esperarPorElementoLocalizado(locatorPrecioMax1000));
-        Thread.sleep(2000);
+        Thread.sleep(5000);
         click(esperarPorElementoLocalizado(locatorBtnAplicarPrecio));
         Thread.sleep(2000);
     }

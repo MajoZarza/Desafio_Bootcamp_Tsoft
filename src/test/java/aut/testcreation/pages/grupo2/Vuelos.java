@@ -53,6 +53,7 @@ public class Vuelos extends Rumbo_Base {
     By locatorBtnFlecha = By.xpath("//*[@id=\"hub-csw-container\"]/div/div[2]/div/form/div/div[6]/div[1]/div/div[2]/div/div[2]/section/div/div/div[2]/button");
 
     By locatorPasajeros = By.xpath("//*[@id=\"hub-csw-container\"]/div/div[2]/div/form/div/div[6]/div/div/div/button");
+    By locatorErrorTelefono = By.xpath("//form/section/div[4]/div/div[3]");
     public Vuelos(WebDriver driver) {
         super(driver);
     }
@@ -170,5 +171,8 @@ public class Vuelos extends Rumbo_Base {
     public void flechaparacambiarop(){click(locatorBtnFlecha);
         esperarXSegundos(2000);
 
+    }
+    public String obtenerErrorTelefono () {
+        return obtenerTexto(esperarPorElementoLocalizado(locatorErrorTelefono));
     }
 }
