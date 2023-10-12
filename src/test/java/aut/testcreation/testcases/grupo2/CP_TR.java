@@ -46,12 +46,21 @@ public class CP_TR extends SeleniumTestBase {
     //Reserva Tren - Ida y vuelta
     public void CP_TR_02() {
         trenes.reservaTren("Madrid", "Barcelona");
-        homePage.esperarXSegundos(1000);
+        homePage.esperarXSegundos(5000);
         trenes.buscarLupa();
         homePage.esperarXSegundos(5000);
         trenes.seleccionarPrimerTrenParaReserva();
         homePage.esperarXSegundos(3000);
         trenes.completarFormularioContactoTren("Dario", "Daro", "darioa@gmail.com", "198889997");
+        trenes.completarFormularioPasajero("15", "Enero", "1991");
+        trenes.agregarDNI("1115555");
+        homePage.esperarXSegundos(3000);
+        trenes.completarFormularioContactoTren2("Daria", "Daro");
+        homePage.esperarXSegundos(2000);
+        trenes.completarFormularioPasajero2("15", "Febrero", "1992");
+        trenes.agregarDNI2("1115556");
+        trenes.BtnSiguiente();
+        homePage.esperarXSegundos(2000);
 
 
     }
